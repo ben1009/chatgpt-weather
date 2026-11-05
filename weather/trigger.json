@@ -1,8 +1,7 @@
 {
-  "request_id": "chatgpt-mudanjiang-20261105-01",
-  "query": "查询黑龙江省牡丹江市城区未来48小时天气，重点查看2026年11月7日至8日周末天气和降水",
-  "location": "黑龙江省牡丹江市城区",
-  "longitude": 129.633,
-  "latitude": 44.551,
-  "requested_at": "2026-11-05T19:16:00+08:00"
+  "request_id": "chatgpt-ledong-20261105-01",
+  "query": "查询海南省乐东黎族自治县抱由镇未来48小时天气、气温和降雨，重点看周末",
+  "location": "海南省乐东黎族自治县抱由镇",
+  "longitude": 109.1734,
+  "latitude": 18.7501
 }
