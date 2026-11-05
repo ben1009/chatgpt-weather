@@ -1,19 +1,19 @@
 # ChatGPT Weather
 
-This private repository fetches Caiyun forecasts only when `weather/trigger.json` is updated. It has no scheduled workflow. A manual `workflow_dispatch` entry is also available in GitHub Actions.
+This private repository fetches Caiyun forecasts when `weather/trigger.json` changes. There is no scheduled workflow. A manual `workflow_dispatch` entry is also available in GitHub Actions.
 
 ## Configure secrets
 
-Add these repository Actions secrets:
+The repository uses these Actions secrets:
 
 - `CAIYUN_APP_KEY`
 - `CAIYUN_APP_SECRET`
 
-The fetch script signs Caiyun v2.6 API requests with HMAC-SHA256 and keeps both values out of repository files and logs.
+The fetch script signs Caiyun v2.6 API requests with HMAC-SHA256. Secret values are not stored in repository files or printed by the script.
 
 ## Request a forecast
 
-For each ChatGPT weather request, replace `weather/trigger.json` with a new `request_id`, the location label, and coordinates. Mainland China coordinates must use GCJ-02. For example:
+For each ChatGPT weather request, replace `weather/trigger.json` with a new, unique `request_id`, a location label, and coordinates. Mainland China coordinates must use GCJ-02. For example:
 
 ```json
 {
@@ -26,6 +26,8 @@ For each ChatGPT weather request, replace `weather/trigger.json` with a new `req
 }
 ```
 
-The push starts `.github/workflows/fetch-weather.yml`. The workflow writes the response and request metadata to `weather/weather.json`, then commits that file. Its push does not match the trigger path, so it does not start another run. Read `weather/weather.json` after the run completes.
+The push starts `.github/workflows/fetch-weather.yml`. After the run completes, read `weather/weather.json` and confirm its `request_id` matches the request. The result contains a compact current, daily, and hourly forecast, precipitation and sky conditions, alerts, and coverage metadata; the raw Caiyun response is not saved.
 
-The combined API request asks for up to 15 daily forecast entries and 72 hourly entries; Caiyun may cap results according to the account's plan.
+`trigger.json` is a single latest-request slot, not a durable queue. Wait for the matching result before submitting another request. If another update arrives while a run is active, the older result is skipped and the latest queued request is processed.
+
+The API request asks for up to 15 daily forecast entries and 72 hourly entries; Caiyun may cap results according to the account's plan.
