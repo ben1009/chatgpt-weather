@@ -33,48 +33,31 @@ jobs:
 
       - name: Commit forecast
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           result_file="${RUNNER_TEMP}/weather-result.json"
-          askpass="${RUNNER_TEMP}/git-askpass.sh"
           cp weather/weather.json "$result_file"
           request_id="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["request_id"])' "$result_file")"
-          git reset --hard HEAD
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          cat > "$askpass" <<'ASKPASS'
-          #!/bin/sh
-          case "$1" in
-            *Username*) printf '%s\n' 'x-access-token' ;;
-            *) printf '%s\n' "$GITHUB_TOKEN" ;;
-          esac
-          ASKPASS
-          chmod 700 "$askpass"
+          content="$(base64 -w0 "$result_file")"
 
           for attempt in 1 2 3; do
-            git fetch origin "$GITHUB_REF_NAME"
-            git checkout -B "$GITHUB_REF_NAME" "origin/$GITHUB_REF_NAME"
-
-            latest_request_id="$(git show "origin/$GITHUB_REF_NAME:weather/trigger.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["request_id"])')"
+            latest_request_id="$(gh api "repos/$GITHUB_REPOSITORY/contents/weather/trigger.json" -f "ref=$GITHUB_REF_NAME" --jq '.content | gsub("\\n"; "") | @base64d | fromjson | .request_id')"
             if [ "$latest_request_id" != "$request_id" ]; then
               echo "A newer request replaced this one; its run will publish the result."
               exit 0
             fi
 
-            cp "$result_file" weather/weather.json
-            git add weather/weather.json
-            if git diff --cached --quiet; then
-              echo "Weather result is already up to date."
+            current_sha="$(gh api "repos/$GITHUB_REPOSITORY/contents/weather/weather.json" -f "ref=$GITHUB_REF_NAME" --jq .sha)"
+            if gh api --method PUT "repos/$GITHUB_REPOSITORY/contents/weather/weather.json" \
+              -f message="chore: update weather forecast" \
+              -f content="$content" \
+              -f sha="$current_sha" \
+              -f branch="$GITHUB_REF_NAME" \
+              --silent; then
               exit 0
             fi
 
-            git commit -m "chore: update weather forecast"
-            if GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 git push origin "HEAD:$GITHUB_REF_NAME"; then
-              exit 0
-            fi
-
-            echo "Branch changed during the push attempt; retrying against the latest commit."
+            echo "Weather result changed during the update; retrying against the latest file."
           done
 
           echo "Could not commit the weather result after three attempts." >&2
