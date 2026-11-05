@@ -1,5 +1,6 @@
 import base64
 import copy
+import http.client
 import json
 import sys
 import unittest
@@ -116,6 +117,40 @@ class PublishingTests(unittest.TestCase):
         with self.assertRaises(GitHubError):
             publish_weather(branch, self.trigger, self.result, attempts=3)
         self.assertEqual(branch.create_commit.call_count, 3)
+
+    def test_committed_result_is_reconciled_after_truncated_http_response(self):
+        branch = Branch(self.trigger)
+        client = GitHubClient("owner/repo", "main", "test-token")
+        client.branch_head = branch.branch_head
+        client.read_file = branch.read_file
+        response = mock.MagicMock()
+        response.__enter__.return_value = response
+        response.read.side_effect = http.client.IncompleteRead(b'{"data":', 30)
+
+        def apply_commit_then_interrupt_response(*args, **kwargs):
+            branch.advance({"weather/weather.json": self.result})
+            return response
+
+        with mock.patch("urllib.request.urlopen", side_effect=apply_commit_then_interrupt_response) as request:
+            self.assertTrue(publish_weather(client, self.trigger, self.result, attempts=1))
+        request.assert_called_once()
+        self.assertEqual(branch.read_file("weather/weather.json", branch.head), self.result)
+
+    def test_response_read_transport_failures_use_github_error_path(self):
+        errors = [
+            http.client.IncompleteRead(b"partial", 30),
+            http.client.RemoteDisconnected("remote closed"),
+            ConnectionResetError("connection reset"),
+            TimeoutError("read timed out"),
+        ]
+        client = GitHubClient("owner/repo", "main", "test-token")
+        for error in errors:
+            with self.subTest(error=type(error).__name__):
+                response = mock.MagicMock()
+                response.__enter__.return_value = response
+                response.read.side_effect = error
+                with mock.patch("urllib.request.urlopen", return_value=response), self.assertRaises(GitHubError):
+                    client.create_commit("expected-head", self.result)
 
     def test_result_for_another_request_is_rejected(self):
         with self.assertRaises(ValueError):

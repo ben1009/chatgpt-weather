@@ -2,6 +2,7 @@
 """Publish a result only while the branch still contains the captured request."""
 
 import base64
+import http.client
 import json
 import os
 import sys
@@ -45,8 +46,10 @@ class GitHubClient:
             if error.code == 404 and body is None and "/contents/" in path:
                 return {}
             raise GitHubError(f"GitHub API returned HTTP {error.code}.") from None
-        except (urllib.error.URLError, TimeoutError):
-            raise GitHubError("Could not connect to the GitHub API.") from None
+        except (OSError, http.client.HTTPException):
+            # Reads can fail after the mutation has already been applied.
+            # Keep these failures on the same reconciliation path as timeouts.
+            raise GitHubError("The GitHub API connection was interrupted.") from None
         except (UnicodeDecodeError, json.JSONDecodeError):
             raise GitHubError("GitHub returned an invalid JSON response.") from None
         if not isinstance(payload, dict) or payload.get("errors"):
