@@ -1,13 +1,13 @@
 {
-  "request_id": "chatgpt-beijing-chaoyang-20261105-2048-recheck",
-  "query": "查询北京市朝阳区当前天气、未来48小时温度、降水和11月7日天气",
-  "location": "北京市朝阳区",
+  "request_id": "chatgpt-yanqing-20261105-2355-01",
+  "query": "查询北京延庆区当前天气及未来48小时逐小时温度、天气、降水情况，尤其11月7日降雪风险",
+  "location": "北京市延庆区",
   "coordinates": {
-    "longitude": 116.4436,
-    "latitude": 39.9219
+    "longitude": 115.974609,
+    "latitude": 40.457033
   },
-  "requested_at": "2026-11-05T20:48:00+08:00",
-  "fetched_at": "2026-11-05T12:50:29Z",
+  "requested_at": "2026-11-05T23:55:00+08:00",
+  "fetched_at": "2026-11-05T15:58:28Z",
   "source": "Caiyun Weather API",
   "status": "ok",
   "sections": {
@@ -34,8 +34,8 @@
     "daily_start": "2026-11-05T00:00+08:00",
     "daily_end": "2026-11-07T00:00+08:00",
     "daily_entries": 3,
-    "hourly_start": "2026-11-05T20:00+08:00",
-    "hourly_end": "2026-11-07T19:00+08:00",
+    "hourly_start": "2026-11-05T23:00+08:00",
+    "hourly_end": "2026-11-07T22:00+08:00",
     "hourly_entries": 48,
     "precipitation": {
       "daily": {
@@ -46,8 +46,8 @@
         "cadence_valid": true
       },
       "hourly": {
-        "start": "2026-11-05T20:00+08:00",
-        "end": "2026-11-07T19:00+08:00",
+        "start": "2026-11-05T23:00+08:00",
+        "end": "2026-11-07T22:00+08:00",
         "entries": 48,
         "missing_times": [],
         "cadence_valid": true
@@ -57,9 +57,9 @@
   "summary": "未来24小时晴",
   "hourly_summary": "未来24小时晴",
   "current": {
-    "temperature": 8.76,
-    "apparent_temperature": 5.9,
-    "humidity": 0.29,
+    "temperature": 1.74,
+    "apparent_temperature": -1.1,
+    "humidity": 0.36,
     "precipitation": {
       "local": {
         "status": "ok",
@@ -74,8 +74,8 @@
     },
     "skycon": "CLEAR_NIGHT",
     "wind": {
-      "speed": 6.56,
-      "direction": 345.05
+      "speed": 4.1,
+      "direction": 10.12
     }
   },
   "alerts": null,
@@ -101,19 +101,19 @@
         "probability": 0
       },
       "temperature": {
-        "max": 17.08,
-        "min": 4.95,
-        "avg": 7.49
+        "max": 10.65,
+        "min": 1.74,
+        "avg": 1.74
       },
       "temperature_08h_20h": {
-        "max": 17.08,
-        "min": 5.63,
-        "avg": 13.91
+        "max": 10.65,
+        "min": 3.31,
+        "avg": 8.37
       },
       "temperature_20h_32h": {
-        "max": 10.17,
-        "min": 3.59,
-        "avg": 6.28
+        "max": 5.72,
+        "min": -0.62,
+        "avg": 1.63
       },
       "skycon": "CLEAR_NIGHT",
       "skycon_08h_20h": "CLEAR_DAY",
@@ -140,103 +140,73 @@
         "probability": 0
       },
       "temperature": {
-        "max": 14.1,
-        "min": 3.29,
-        "avg": 8.45
+        "max": 9.72,
+        "min": -0.82,
+        "avg": 3.87
       },
       "temperature_08h_20h": {
-        "max": 14.1,
-        "min": 3.29,
-        "avg": 10.71
+        "max": 9.72,
+        "min": -0.82,
+        "avg": 5.95
       },
       "temperature_20h_32h": {
-        "max": 9.67,
-        "min": 3.04,
-        "avg": 5.77
+        "max": 5.02,
+        "min": 0.76,
+        "avg": 2.79
       },
-      "skycon": "CLEAR_DAY",
+      "skycon": "PARTLY_CLOUDY_DAY",
       "skycon_08h_20h": "CLEAR_DAY",
       "skycon_20h_32h": "PARTLY_CLOUDY_NIGHT"
     },
     {
       "date": "2026-11-07T00:00+08:00",
       "precipitation": {
-        "max": 2.9017,
+        "max": 2.7741,
         "min": 0.0,
-        "avg": 0.5355,
+        "avg": 0.6226,
         "probability": 70
       },
       "precipitation_08h_20h": {
-        "max": 2.2045,
+        "max": 2.0077,
         "min": 0.0,
-        "avg": 0.4627,
+        "avg": 0.5168,
         "probability": 70
       },
       "precipitation_20h_32h": {
-        "max": 2.9017,
-        "min": 0.0635,
-        "avg": 0.9011,
+        "max": 2.7741,
+        "min": 0.0978,
+        "avg": 0.8982,
         "probability": 70
       },
       "temperature": {
-        "max": 8.54,
-        "min": 2.07,
-        "avg": 5.44
+        "max": 3.61,
+        "min": 0.49,
+        "avg": 2.44
       },
       "temperature_08h_20h": {
-        "max": 8.54,
-        "min": 2.79,
-        "avg": 6.89
+        "max": 3.61,
+        "min": 0.49,
+        "avg": 2.83
       },
       "temperature_20h_32h": {
-        "max": 5.47,
-        "min": 1.68,
-        "avg": 2.57
+        "max": 2.98,
+        "min": 1.37,
+        "avg": 1.89
       },
-      "skycon": "MODERATE_RAIN",
-      "skycon_08h_20h": "MODERATE_RAIN",
+      "skycon": "MODERATE_SNOW",
+      "skycon_08h_20h": "MODERATE_SNOW",
       "skycon_20h_32h": "MODERATE_SNOW"
     }
   ],
   "hourly": [
-    {
-      "datetime": "2026-11-05T20:00+08:00",
-      "precipitation": {
-        "value": 0.0,
-        "probability": 0
-      },
-      "temperature": 8.76,
-      "apparent_temperature": 5.9,
-      "skycon": "CLEAR_NIGHT"
-    },
-    {
-      "datetime": "2026-11-05T21:00+08:00",
-      "precipitation": {
-        "value": 0.0,
-        "probability": 0
-      },
-      "temperature": 7.71,
-      "apparent_temperature": 4.0,
-      "skycon": "CLEAR_NIGHT"
-    },
-    {
-      "datetime": "2026-11-05T22:00+08:00",
-      "precipitation": {
-        "value": 0.0,
-        "probability": 0
-      },
-      "temperature": 7.08,
-      "apparent_temperature": 3.2,
-      "skycon": "CLEAR_NIGHT"
-    },
     {
       "datetime": "2026-11-05T23:00+08:00",
       "precipitation": {
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 6.41,
-      "apparent_temperature": 2.8,
+      "temperature": 1.74,
+      "apparent_temperature": -1.1,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -245,8 +215,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 6.13,
-      "apparent_temperature": 3.0,
+      "temperature": 1.01,
+      "apparent_temperature": -1.7,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -255,8 +225,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.87,
-      "apparent_temperature": 2.8,
+      "temperature": 0.58,
+      "apparent_temperature": -2.1,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -265,8 +235,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.72,
-      "apparent_temperature": 2.8,
+      "temperature": 0.38,
+      "apparent_temperature": -2.3,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -275,9 +245,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.14,
-      "apparent_temperature": 2.3,
-      "skycon": "CLEAR_NIGHT"
+      "temperature": 0.11,
+      "apparent_temperature": -2.6,
+      "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
       "datetime": "2026-11-06T04:00+08:00",
@@ -285,8 +255,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.61,
-      "apparent_temperature": 1.7,
+      "temperature": 0.04,
+      "apparent_temperature": -2.7,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -295,8 +265,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.12,
-      "apparent_temperature": 1.4,
+      "temperature": -0.38,
+      "apparent_temperature": -3.1,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -305,8 +275,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 3.59,
-      "apparent_temperature": 0.9,
+      "temperature": -0.62,
+      "apparent_temperature": -3.4,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -315,9 +285,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 3.29,
-      "apparent_temperature": 0.7,
-      "skycon": "CLEAR_DAY"
+      "temperature": -0.82,
+      "apparent_temperature": -3.6,
+      "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
       "datetime": "2026-11-06T08:00+08:00",
@@ -325,9 +295,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.03,
-      "apparent_temperature": 2.1,
-      "skycon": "CLEAR_DAY"
+      "temperature": 1.19,
+      "apparent_temperature": -1.5,
+      "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
       "datetime": "2026-11-06T09:00+08:00",
@@ -335,8 +305,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 8.3,
-      "apparent_temperature": 5.2,
+      "temperature": 3.31,
+      "apparent_temperature": 0.4,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -345,8 +315,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 10.08,
-      "apparent_temperature": 7.0,
+      "temperature": 4.77,
+      "apparent_temperature": 1.8,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -355,8 +325,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 11.44,
-      "apparent_temperature": 8.4,
+      "temperature": 5.88,
+      "apparent_temperature": 2.7,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -365,8 +335,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 12.5,
-      "apparent_temperature": 9.4,
+      "temperature": 7.22,
+      "apparent_temperature": 4.1,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -375,8 +345,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 13.39,
-      "apparent_temperature": 10.3,
+      "temperature": 8.45,
+      "apparent_temperature": 5.4,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -385,8 +355,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 13.93,
-      "apparent_temperature": 11.0,
+      "temperature": 9.2,
+      "apparent_temperature": 6.4,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -395,8 +365,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 14.1,
-      "apparent_temperature": 11.4,
+      "temperature": 9.72,
+      "apparent_temperature": 6.9,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -405,8 +375,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 13.5,
-      "apparent_temperature": 10.8,
+      "temperature": 9.55,
+      "apparent_temperature": 6.8,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -415,8 +385,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 12.21,
-      "apparent_temperature": 9.6,
+      "temperature": 7.03,
+      "apparent_temperature": 4.5,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -425,8 +395,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 10.79,
-      "apparent_temperature": 8.2,
+      "temperature": 5.87,
+      "apparent_temperature": 3.0,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -435,9 +405,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 9.67,
-      "apparent_temperature": 7.2,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 5.02,
+      "apparent_temperature": 2.1,
+      "skycon": "CLEAR_NIGHT"
     },
     {
       "datetime": "2026-11-06T20:00+08:00",
@@ -445,9 +415,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 8.71,
-      "apparent_temperature": 6.5,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 4.37,
+      "apparent_temperature": 1.6,
+      "skycon": "CLEAR_NIGHT"
     },
     {
       "datetime": "2026-11-06T21:00+08:00",
@@ -455,8 +425,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 7.71,
-      "apparent_temperature": 5.6,
+      "temperature": 3.8,
+      "apparent_temperature": 1.1,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -465,9 +435,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 6.84,
-      "apparent_temperature": 4.7,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 3.47,
+      "apparent_temperature": 0.9,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-06T23:00+08:00",
@@ -475,9 +445,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 6.1,
-      "apparent_temperature": 3.8,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 3.68,
+      "apparent_temperature": 1.0,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T00:00+08:00",
@@ -485,9 +455,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.42,
-      "apparent_temperature": 3.1,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 3.47,
+      "apparent_temperature": 0.8,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T01:00+08:00",
@@ -495,9 +465,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 5.06,
-      "apparent_temperature": 2.7,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 2.8,
+      "apparent_temperature": 0.1,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T02:00+08:00",
@@ -505,9 +475,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.68,
-      "apparent_temperature": 2.3,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 2.09,
+      "apparent_temperature": -0.8,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T03:00+08:00",
@@ -515,9 +485,9 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.27,
-      "apparent_temperature": 1.7,
-      "skycon": "PARTLY_CLOUDY_NIGHT"
+      "temperature": 1.68,
+      "apparent_temperature": -1.2,
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T04:00+08:00",
@@ -525,8 +495,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.05,
-      "apparent_temperature": 1.4,
+      "temperature": 1.43,
+      "apparent_temperature": -1.4,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -535,8 +505,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 3.63,
-      "apparent_temperature": 0.9,
+      "temperature": 0.95,
+      "apparent_temperature": -1.9,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -545,8 +515,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 3.04,
-      "apparent_temperature": 0.4,
+      "temperature": 0.76,
+      "apparent_temperature": -2.1,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -555,8 +525,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 2.79,
-      "apparent_temperature": 0.1,
+      "temperature": 0.49,
+      "apparent_temperature": -2.3,
       "skycon": "CLOUDY"
     },
     {
@@ -565,8 +535,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 4.16,
-      "apparent_temperature": 1.1,
+      "temperature": 1.56,
+      "apparent_temperature": -1.5,
       "skycon": "CLOUDY"
     },
     {
@@ -575,8 +545,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 6.03,
-      "apparent_temperature": 3.0,
+      "temperature": 2.02,
+      "apparent_temperature": -1.0,
       "skycon": "CLOUDY"
     },
     {
@@ -585,8 +555,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 7.07,
-      "apparent_temperature": 4.1,
+      "temperature": 2.67,
+      "apparent_temperature": -0.1,
       "skycon": "CLOUDY"
     },
     {
@@ -595,89 +565,119 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 7.63,
-      "apparent_temperature": 4.7,
+      "temperature": 3.05,
+      "apparent_temperature": 0.2,
       "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T12:00+08:00",
       "precipitation": {
-        "value": 0.0576,
+        "value": 0.0,
         "probability": 0
       },
-      "temperature": 7.69,
-      "apparent_temperature": 4.6,
+      "temperature": 3.17,
+      "apparent_temperature": 0.4,
       "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T13:00+08:00",
       "precipitation": {
-        "value": 0.0973,
+        "value": 0.3517,
         "probability": 60
       },
-      "temperature": 7.78,
-      "apparent_temperature": 4.7,
+      "temperature": 3.34,
+      "apparent_temperature": 0.4,
       "skycon": "LIGHT_RAIN"
     },
     {
       "datetime": "2026-11-07T14:00+08:00",
       "precipitation": {
-        "value": 0.2289,
+        "value": 0.7032,
         "probability": 60
       },
-      "temperature": 8.08,
-      "apparent_temperature": 5.2,
+      "temperature": 3.6,
+      "apparent_temperature": 0.8,
       "skycon": "LIGHT_RAIN"
     },
     {
       "datetime": "2026-11-07T15:00+08:00",
       "precipitation": {
-        "value": 0.4145,
+        "value": 0.7976,
         "probability": 60
       },
-      "temperature": 8.47,
-      "apparent_temperature": 5.8,
+      "temperature": 3.61,
+      "apparent_temperature": 0.9,
       "skycon": "LIGHT_RAIN"
     },
     {
       "datetime": "2026-11-07T16:00+08:00",
       "precipitation": {
-        "value": 0.8491,
-        "probability": 60
+        "value": 1.0453,
+        "probability": 70
       },
-      "temperature": 8.54,
-      "apparent_temperature": 6.3,
-      "skycon": "LIGHT_RAIN"
+      "temperature": 3.57,
+      "apparent_temperature": 1.1,
+      "skycon": "MODERATE_RAIN"
     },
     {
       "datetime": "2026-11-07T17:00+08:00",
       "precipitation": {
-        "value": 1.7008,
+        "value": 1.2967,
         "probability": 70
       },
-      "temperature": 7.62,
-      "apparent_temperature": 5.3,
+      "temperature": 3.57,
+      "apparent_temperature": 1.2,
       "skycon": "MODERATE_RAIN"
     },
     {
       "datetime": "2026-11-07T18:00+08:00",
       "precipitation": {
-        "value": 2.2045,
+        "value": 2.0077,
         "probability": 70
       },
-      "temperature": 6.82,
-      "apparent_temperature": 4.6,
+      "temperature": 3.31,
+      "apparent_temperature": 1.1,
       "skycon": "MODERATE_RAIN"
     },
     {
       "datetime": "2026-11-07T19:00+08:00",
       "precipitation": {
-        "value": 2.9017,
-        "probability": 80
+        "value": 2.7741,
+        "probability": 70
       },
-      "temperature": 5.47,
-      "apparent_temperature": 2.9,
-      "skycon": "HEAVY_RAIN"
+      "temperature": 2.98,
+      "apparent_temperature": 1.0,
+      "skycon": "MODERATE_SNOW"
+    },
+    {
+      "datetime": "2026-11-07T20:00+08:00",
+      "precipitation": {
+        "value": 2.4421,
+        "probability": 70
+      },
+      "temperature": 2.45,
+      "apparent_temperature": 0.6,
+      "skycon": "MODERATE_SNOW"
+    },
+    {
+      "datetime": "2026-11-07T21:00+08:00",
+      "precipitation": {
+        "value": 1.4659,
+        "probability": 70
+      },
+      "temperature": 2.14,
+      "apparent_temperature": 0.3,
+      "skycon": "MODERATE_SNOW"
+    },
+    {
+      "datetime": "2026-11-07T22:00+08:00",
+      "precipitation": {
+        "value": 1.0738,
+        "probability": 70
+      },
+      "temperature": 1.86,
+      "apparent_temperature": 0.1,
+      "skycon": "MODERATE_SNOW"
     }
   ]
 }
