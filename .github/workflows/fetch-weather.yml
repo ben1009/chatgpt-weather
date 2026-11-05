@@ -36,11 +36,21 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           result_file="${RUNNER_TEMP}/weather-result.json"
+          askpass="${RUNNER_TEMP}/git-askpass.sh"
           cp weather/weather.json "$result_file"
           request_id="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1], encoding="utf-8"))["request_id"])' "$result_file")"
           git reset --hard HEAD
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          cat > "$askpass" <<'ASKPASS'
+          #!/bin/sh
+          case "$1" in
+            *Username*) printf '%s\n' 'x-access-token' ;;
+            *) printf '%s\n' "$GITHUB_TOKEN" ;;
+          esac
+          ASKPASS
+          chmod 700 "$askpass"
 
           for attempt in 1 2 3; do
             git fetch origin "$GITHUB_REF_NAME"
@@ -60,8 +70,7 @@ jobs:
             fi
 
             git commit -m "chore: update weather forecast"
-            auth_header="$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 -w0)"
-            if git -c "http.extraheader=AUTHORIZATION: basic ${auth_header}" push origin "HEAD:$GITHUB_REF_NAME"; then
+            if GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 git push origin "HEAD:$GITHUB_REF_NAME"; then
               exit 0
             fi
 
