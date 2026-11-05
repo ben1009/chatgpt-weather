@@ -1,13 +1,13 @@
 {
-  "request_id": "bootstrap-2026-11-05-01",
-  "query": "验证天气工作流和 API 连通性",
+  "request_id": "app-trigger-check-2026-11-05-01",
+  "query": "验证 GitHub App 文件更新是否触发工作流",
   "location": "北京朝阳区",
   "coordinates": {
     "longitude": 116.4436,
     "latitude": 39.9219
   },
-  "requested_at": "2026-11-05T18:00:00+08:00",
-  "fetched_at": "2026-11-05T10:44:56Z",
+  "requested_at": "2026-11-05T18:05:00+08:00",
+  "fetched_at": "2026-11-05T10:46:38Z",
   "source": "Caiyun Weather API v2.6",
   "data": {
     "status": "ok",
