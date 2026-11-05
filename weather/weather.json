@@ -7,8 +7,26 @@
     "latitude": 44.551
   },
   "requested_at": "2026-11-05T19:16:00+08:00",
-  "fetched_at": "2026-11-05T11:30:12Z",
+  "fetched_at": "2026-11-05T11:51:59Z",
   "source": "Caiyun Weather API",
+  "status": "ok",
+  "sections": {
+    "daily": {
+      "status": "ok",
+      "precipitation_complete": true
+    },
+    "hourly": {
+      "status": "ok",
+      "precipitation_complete": true
+    },
+    "realtime": {
+      "status": "ok"
+    },
+    "alert": {
+      "status": "missing",
+      "error": "Provider did not return this section."
+    }
+  },
   "api_version": "v2.6",
   "timezone": "Asia/Shanghai",
   "unit": "metric",
@@ -18,14 +36,30 @@
     "daily_entries": 3,
     "hourly_start": "2026-11-05T19:00+08:00",
     "hourly_end": "2026-11-07T18:00+08:00",
-    "hourly_entries": 48
+    "hourly_entries": 48,
+    "precipitation": {
+      "daily": {
+        "start": "2026-11-05T00:00+08:00",
+        "end": "2026-11-07T00:00+08:00",
+        "entries": 3,
+        "missing_times": [],
+        "cadence_valid": true
+      },
+      "hourly": {
+        "start": "2026-11-05T19:00+08:00",
+        "end": "2026-11-07T18:00+08:00",
+        "entries": 48,
+        "missing_times": [],
+        "cadence_valid": true
+      }
+    }
   },
   "summary": "阴，今天晚间21点钟后转小雪，其后多云",
   "hourly_summary": "阴，今天晚间21点钟后转小雪，其后多云",
   "current": {
-    "temperature": 1.93,
-    "apparent_temperature": -1.2,
-    "humidity": 0.72,
+    "temperature": 1.33,
+    "apparent_temperature": -1.8,
+    "humidity": 0.74,
     "precipitation": {
       "local": {
         "status": "ok",
@@ -44,9 +78,9 @@
     {
       "date": "2026-11-05T00:00+08:00",
       "precipitation": {
-        "max": 1.2677,
+        "max": 1.2645,
         "min": 0.0,
-        "avg": 0.5089,
+        "avg": 0.4954,
         "probability": 70
       },
       "precipitation_08h_20h": {
@@ -56,25 +90,25 @@
         "probability": 0
       },
       "precipitation_20h_32h": {
-        "max": 1.2677,
+        "max": 1.2645,
         "min": 0.0,
-        "avg": 0.311,
+        "avg": 0.306,
         "probability": 60
       },
       "temperature": {
-        "max": 10.56,
-        "min": -0.94,
-        "avg": 0.67
+        "max": 10.97,
+        "min": -0.87,
+        "avg": 0.41
       },
       "temperature_08h_20h": {
-        "max": 10.56,
-        "min": 3.14,
-        "avg": 6.5
+        "max": 10.97,
+        "min": 2.71,
+        "avg": 6.64
       },
       "temperature_20h_32h": {
-        "max": 1.93,
-        "min": -7.29,
-        "avg": -2.76
+        "max": 1.33,
+        "min": -6.88,
+        "avg": -2.64
       },
       "skycon": "MODERATE_SNOW",
       "skycon_08h_20h": "PARTLY_CLOUDY_DAY",
@@ -83,9 +117,9 @@
     {
       "date": "2026-11-06T00:00+08:00",
       "precipitation": {
-        "max": 0.8256,
+        "max": 0.8333,
         "min": 0.0,
-        "avg": 0.0495,
+        "avg": 0.0498,
         "probability": 60
       },
       "precipitation_08h_20h": {
@@ -101,19 +135,19 @@
         "probability": 0
       },
       "temperature": {
-        "max": -2.11,
-        "min": -8.36,
-        "avg": -5.84
+        "max": -1.87,
+        "min": -7.94,
+        "avg": -5.44
       },
       "temperature_08h_20h": {
-        "max": -4.53,
-        "min": -7.65,
-        "avg": -5.61
+        "max": -4.12,
+        "min": -7.24,
+        "avg": -5.19
       },
       "temperature_20h_32h": {
-        "max": -6.27,
-        "min": -10.17,
-        "avg": -8.61
+        "max": -5.86,
+        "min": -9.75,
+        "avg": -8.19
       },
       "skycon": "LIGHT_SNOW",
       "skycon_08h_20h": "PARTLY_CLOUDY_DAY",
@@ -140,19 +174,19 @@
         "probability": 0
       },
       "temperature": {
-        "max": -4.12,
-        "min": -10.17,
-        "avg": -7.41
+        "max": -3.71,
+        "min": -9.75,
+        "avg": -7.0
       },
       "temperature_08h_20h": {
-        "max": -4.12,
-        "min": -9.84,
-        "avg": -5.97
+        "max": -3.71,
+        "min": -9.43,
+        "avg": -5.56
       },
       "temperature_20h_32h": {
-        "max": -6.59,
-        "min": -11.37,
-        "avg": -9.44
+        "max": -6.18,
+        "min": -10.96,
+        "avg": -9.03
       },
       "skycon": "CLEAR_DAY",
       "skycon_08h_20h": "CLEAR_DAY",
@@ -166,68 +200,68 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": 1.93,
-      "apparent_temperature": -1.2,
+      "temperature": 1.33,
+      "apparent_temperature": -1.8,
       "skycon": "LIGHT_HAZE"
     },
     {
       "datetime": "2026-11-05T20:00+08:00",
       "precipitation": {
         "value": 0.0,
-        "probability": 48
+        "probability": 81
       },
-      "temperature": 1.29,
-      "apparent_temperature": -1.8,
+      "temperature": 0.86,
+      "apparent_temperature": -2.3,
       "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-05T21:00+08:00",
       "precipitation": {
-        "value": 0.0899,
+        "value": 0.075,
         "probability": 60
       },
-      "temperature": 0.89,
-      "apparent_temperature": -2.7,
+      "temperature": 0.63,
+      "apparent_temperature": -3.0,
       "skycon": "LIGHT_SNOW"
     },
     {
       "datetime": "2026-11-05T22:00+08:00",
       "precipitation": {
-        "value": 1.1868,
+        "value": 1.1375,
         "probability": 70
       },
-      "temperature": 0.2,
-      "apparent_temperature": -3.8,
+      "temperature": 0.1,
+      "apparent_temperature": -3.9,
       "skycon": "MODERATE_SNOW"
     },
     {
       "datetime": "2026-11-05T23:00+08:00",
       "precipitation": {
-        "value": 1.2677,
+        "value": 1.2645,
         "probability": 70
       },
-      "temperature": -0.94,
-      "apparent_temperature": -5.4,
+      "temperature": -0.87,
+      "apparent_temperature": -5.3,
       "skycon": "MODERATE_SNOW"
     },
     {
       "datetime": "2026-11-06T00:00+08:00",
       "precipitation": {
-        "value": 0.8256,
+        "value": 0.8333,
         "probability": 60
       },
-      "temperature": -2.11,
-      "apparent_temperature": -6.8,
+      "temperature": -1.87,
+      "apparent_temperature": -6.5,
       "skycon": "LIGHT_SNOW"
     },
     {
       "datetime": "2026-11-06T01:00+08:00",
       "precipitation": {
-        "value": 0.3619,
+        "value": 0.3613,
         "probability": 60
       },
-      "temperature": -3.37,
-      "apparent_temperature": -8.1,
+      "temperature": -2.96,
+      "apparent_temperature": -7.7,
       "skycon": "LIGHT_SNOW"
     },
     {
@@ -236,8 +270,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.9,
-      "apparent_temperature": -9.8,
+      "temperature": -4.49,
+      "apparent_temperature": -9.3,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -246,8 +280,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.69,
-      "apparent_temperature": -10.8,
+      "temperature": -5.28,
+      "apparent_temperature": -10.3,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -256,8 +290,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.24,
-      "apparent_temperature": -11.2,
+      "temperature": -5.83,
+      "apparent_temperature": -10.8,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -266,8 +300,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.84,
-      "apparent_temperature": -12.1,
+      "temperature": -6.43,
+      "apparent_temperature": -11.7,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -276,8 +310,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.29,
-      "apparent_temperature": -12.8,
+      "temperature": -6.88,
+      "apparent_temperature": -12.3,
       "skycon": "CLOUDY"
     },
     {
@@ -286,8 +320,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.65,
-      "apparent_temperature": -13.0,
+      "temperature": -7.24,
+      "apparent_temperature": -12.5,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -296,8 +330,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.45,
-      "apparent_temperature": -12.1,
+      "temperature": -6.04,
+      "apparent_temperature": -11.6,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -306,8 +340,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.94,
-      "apparent_temperature": -11.7,
+      "temperature": -5.53,
+      "apparent_temperature": -11.2,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -316,8 +350,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.32,
-      "apparent_temperature": -11.6,
+      "temperature": -4.91,
+      "apparent_temperature": -11.2,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -326,8 +360,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.76,
-      "apparent_temperature": -11.2,
+      "temperature": -4.35,
+      "apparent_temperature": -10.8,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -336,8 +370,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.53,
-      "apparent_temperature": -10.9,
+      "temperature": -4.12,
+      "apparent_temperature": -10.4,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -346,8 +380,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.94,
-      "apparent_temperature": -11.6,
+      "temperature": -4.53,
+      "apparent_temperature": -11.2,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -356,8 +390,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.92,
-      "apparent_temperature": -11.6,
+      "temperature": -4.51,
+      "apparent_temperature": -11.2,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -366,8 +400,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.49,
-      "apparent_temperature": -11.8,
+      "temperature": -5.07,
+      "apparent_temperature": -11.4,
       "skycon": "PARTLY_CLOUDY_DAY"
     },
     {
@@ -376,8 +410,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.67,
-      "apparent_temperature": -11.6,
+      "temperature": -5.26,
+      "apparent_temperature": -11.2,
       "skycon": "CLOUDY"
     },
     {
@@ -386,8 +420,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.74,
-      "apparent_temperature": -11.3,
+      "temperature": -5.33,
+      "apparent_temperature": -10.9,
       "skycon": "CLOUDY"
     },
     {
@@ -396,8 +430,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.85,
-      "apparent_temperature": -11.9,
+      "temperature": -5.43,
+      "apparent_temperature": -11.5,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -406,8 +440,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.27,
-      "apparent_temperature": -11.8,
+      "temperature": -5.86,
+      "apparent_temperature": -11.3,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -416,8 +450,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.0,
-      "apparent_temperature": -12.6,
+      "temperature": -6.59,
+      "apparent_temperature": -12.1,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -426,8 +460,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.19,
-      "apparent_temperature": -13.2,
+      "temperature": -6.77,
+      "apparent_temperature": -12.7,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -436,8 +470,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.66,
-      "apparent_temperature": -13.7,
+      "temperature": -7.25,
+      "apparent_temperature": -13.3,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -446,8 +480,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -8.36,
-      "apparent_temperature": -14.3,
+      "temperature": -7.94,
+      "apparent_temperature": -13.8,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -456,8 +490,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -8.87,
-      "apparent_temperature": -14.6,
+      "temperature": -8.46,
+      "apparent_temperature": -14.1,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -466,8 +500,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -9.04,
-      "apparent_temperature": -14.1,
+      "temperature": -8.62,
+      "apparent_temperature": -13.7,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -476,8 +510,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -9.36,
-      "apparent_temperature": -14.6,
+      "temperature": -8.95,
+      "apparent_temperature": -14.1,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -486,8 +520,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -9.53,
-      "apparent_temperature": -14.8,
+      "temperature": -9.11,
+      "apparent_temperature": -14.4,
       "skycon": "PARTLY_CLOUDY_NIGHT"
     },
     {
@@ -496,8 +530,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -9.73,
-      "apparent_temperature": -14.7,
+      "temperature": -9.32,
+      "apparent_temperature": -14.3,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -506,8 +540,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -10.12,
-      "apparent_temperature": -15.2,
+      "temperature": -9.71,
+      "apparent_temperature": -14.8,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -516,8 +550,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -10.17,
-      "apparent_temperature": -15.4,
+      "temperature": -9.75,
+      "apparent_temperature": -15.0,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -526,8 +560,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -9.84,
-      "apparent_temperature": -15.0,
+      "temperature": -9.43,
+      "apparent_temperature": -14.6,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -536,8 +570,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.89,
-      "apparent_temperature": -13.6,
+      "temperature": -7.48,
+      "apparent_temperature": -13.1,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -546,8 +580,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -7.19,
-      "apparent_temperature": -13.2,
+      "temperature": -6.78,
+      "apparent_temperature": -12.8,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -556,8 +590,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.22,
-      "apparent_temperature": -12.3,
+      "temperature": -5.81,
+      "apparent_temperature": -11.9,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -566,8 +600,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.46,
-      "apparent_temperature": -11.6,
+      "temperature": -5.05,
+      "apparent_temperature": -11.2,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -576,8 +610,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.53,
-      "apparent_temperature": -10.7,
+      "temperature": -4.12,
+      "apparent_temperature": -10.3,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -586,8 +620,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.12,
-      "apparent_temperature": -10.1,
+      "temperature": -3.71,
+      "apparent_temperature": -9.7,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -596,8 +630,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.28,
-      "apparent_temperature": -10.1,
+      "temperature": -3.87,
+      "apparent_temperature": -9.7,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -606,8 +640,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -4.54,
-      "apparent_temperature": -10.1,
+      "temperature": -4.13,
+      "apparent_temperature": -9.6,
       "skycon": "CLEAR_DAY"
     },
     {
@@ -616,8 +650,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.2,
-      "apparent_temperature": -10.0,
+      "temperature": -4.79,
+      "apparent_temperature": -9.6,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -626,8 +660,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -5.79,
-      "apparent_temperature": -10.4,
+      "temperature": -5.38,
+      "apparent_temperature": -10.0,
       "skycon": "CLEAR_NIGHT"
     },
     {
@@ -636,8 +670,8 @@
         "value": 0.0,
         "probability": 0
       },
-      "temperature": -6.59,
-      "apparent_temperature": -10.9,
+      "temperature": -6.18,
+      "apparent_temperature": -10.4,
       "skycon": "CLEAR_NIGHT"
     }
   ]
