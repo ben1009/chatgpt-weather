@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-yanqing-20261105-2355-01",
-  "query": "查询北京延庆区当前天气及未来48小时逐小时温度、天气、降水情况，尤其11月7日降雪风险",
-  "location": "北京市延庆区",
-  "longitude": 115.974609,
-  "latitude": 40.457033,
-  "requested_at": "2026-11-05T23:55:00+08:00"
+  "request_id": "chatgpt-chaoyang-20261106-0740-01",
+  "query": "查询北京朝阳区现在天气、今天逐小时气温和降水，以及周六周日雨雪预报",
+  "location": "北京市朝阳区",
+  "longitude": 116.4436,
+  "latitude": 39.9219,
+  "requested_at": "2026-11-06T07:40:00+08:00"
 }
