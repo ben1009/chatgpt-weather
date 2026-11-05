@@ -1,6 +1,6 @@
 # ChatGPT Weather
 
-This private repository fetches Caiyun forecasts when `weather/trigger.json` changes. There is no scheduled workflow. A manual `workflow_dispatch` entry is also available in GitHub Actions.
+This public repository fetches Caiyun forecasts when `weather/trigger.json` changes. There is no scheduled workflow. A manual `workflow_dispatch` entry is also available in GitHub Actions.
 
 ## Configure secrets
 
@@ -39,3 +39,7 @@ An unavailable alert feed is reported as `sections.alert.status = "unavailable"`
 If a commit response is lost or interrupted while being read, publishing re-reads the branch before declaring failure, including after the final attempt. An already committed matching result succeeds without creating a duplicate commit.
 
 Publishing requires a returned commit OID as acknowledgement. If that acknowledgement is missing, the publisher reconciles the branch state before reporting success or failure.
+
+## License
+
+The source code, tests, workflow, and documentation in this repository are licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE). Request and forecast data in `weather/` are excluded from this software license; forecast data is provided by Caiyun.
