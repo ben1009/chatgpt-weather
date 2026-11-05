@@ -1,0 +1,38 @@
+name: Fetch Weather
+
+on:
+  push:
+    paths:
+      - "weather/trigger.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-weather
+  cancel-in-progress: false
+
+jobs:
+  fetch-weather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Caiyun forecast
+        env:
+          CAIYUN_APP_KEY: ${{ secrets.CAIYUN_APP_KEY }}
+          CAIYUN_APP_SECRET: ${{ secrets.CAIYUN_APP_SECRET }}
+        run: python3 scripts/fetch_weather.py
+
+      - name: Commit forecast
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain -- weather/weather.json)" ]; then
+            git add weather/weather.json
+            git commit -m "chore: update weather forecast"
+            git push
+          fi
