@@ -33,3 +33,7 @@ Check `status` and `sections` before interpreting the forecast. A `partial` resu
 `trigger.json` is a single latest-request slot, not a durable queue. Wait for the matching result before submitting another request. Publishing reads the full trigger at an immutable branch commit, then uses GitHub's expected-head commit operation. If the branch changes between the check and commit, publishing retries from its new head and skips a replaced request. The latest queued request is processed.
 
 The API request asks for up to 15 daily forecast entries and 72 hourly entries; Caiyun may cap results according to the account's plan.
+
+An unavailable alert feed is reported as `sections.alert.status = "unavailable"` with `alerts = null`; it does not establish that no warnings are active. In particular, Caiyun documents an upstream failure as empty alert content with `adcodes = null`. Existing warning content is retained if only its coverage metadata is unavailable. See the [Caiyun alert response documentation](https://docs.caiyunapp.com/weather-api/v2/v2.6/5-alert.html).
+
+If the final commit response is lost, publishing re-reads the branch once before declaring failure. An already committed matching result succeeds without creating a duplicate commit.

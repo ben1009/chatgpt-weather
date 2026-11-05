@@ -152,6 +152,26 @@ def section_source(result: dict, name: str) -> tuple:
     return source, info
 
 
+def alert_section(result: dict) -> tuple:
+    source, info = section_source(result, "alert")
+    if info["status"] != "ok":
+        return source, info
+    content = source.get("content")
+    if not isinstance(content, list):
+        return {}, {
+            "status": "unavailable", "provider_status": "ok",
+            "error": "Provider returned invalid weather alert data.",
+        }
+    if not isinstance(source.get("adcodes"), list):
+        # Caiyun documents content=[] plus adcodes=null as upstream failure.
+        # Preserve any known warnings if only their coverage metadata failed.
+        return source if content else {}, {
+            "status": "partial" if content else "unavailable", "provider_status": "ok",
+            "error": "Provider could not retrieve complete weather alert data.",
+        }
+    return source, info
+
+
 def precipitation_coverage(records: list, time_field: str, timezone_name: str | None = None) -> dict:
     times = [item[time_field] for item in records if item.get("precipitation")]
     if time_field == "date":
@@ -225,7 +245,7 @@ def compact_forecast(payload: dict) -> dict:
         fail("Caiyun returned no usable daily or hourly forecast.")
 
     realtime_source, realtime_info = section_source(result, "realtime")
-    alert_source, alert_info = section_source(result, "alert")
+    alert_source, alert_info = alert_section(result)
     current = {
         name: realtime_source[name]
         for name in ("temperature", "apparent_temperature", "humidity", "precipitation", "skycon", "wind")
@@ -245,6 +265,7 @@ def compact_forecast(payload: dict) -> dict:
         any(info["status"] != "ok" for info in (daily_info, hourly_info, realtime_info))
         or not daily_info["precipitation_complete"]
         or not hourly_info["precipitation_complete"]
+        or alert_info["status"] not in ("ok", "missing")
     )
     return {
         "status": "partial" if partial else "ok",
@@ -269,7 +290,7 @@ def compact_forecast(payload: dict) -> dict:
         "summary": result.get("forecast_keypoint"),
         "hourly_summary": hourly_source.get("description"),
         "current": current,
-        "alerts": alert_source if alert_info["status"] == "ok" else None,
+        "alerts": alert_source or None,
         "daily": daily,
         "hourly": hourly,
     }

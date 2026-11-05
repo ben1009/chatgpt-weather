@@ -91,6 +91,8 @@ class GitHubClient:
 
 
 def publish_weather(client, captured_trigger: dict, result_text: str, attempts: int = 3) -> bool:
+    if attempts < 1:
+        raise ValueError("Publishing requires at least one commit attempt.")
     result = json.loads(result_text)
     if (
         not isinstance(result, dict)
@@ -100,7 +102,7 @@ def publish_weather(client, captured_trigger: dict, result_text: str, attempts: 
         raise ValueError("The result does not match the captured request.")
 
     last_error = None
-    for _ in range(attempts):
+    for attempt in range(attempts + 1):
         head = client.branch_head()
         current_trigger = client.read_file("weather/trigger.json", head)
         if current_trigger is None:
@@ -109,12 +111,14 @@ def publish_weather(client, captured_trigger: dict, result_text: str, attempts: 
             return False
         if client.read_file("weather/weather.json", head) == result_text:
             return True
+        if attempt == attempts:
+            break
         try:
             client.create_commit(head, result_text)
             return True
         except GitHubError as error:
-            # Retry from a fresh head. The expected-head check also handles a
-            # trigger change after the read, and a lost successful response.
+            # Reconcile at a fresh head even after the final failure: GitHub
+            # may have committed successfully before its response was lost.
             last_error = error
     raise GitHubError(f"Could not publish after {attempts} branch update attempts.") from last_error
 

@@ -83,6 +83,40 @@ class PublishingTests(unittest.TestCase):
         self.assertTrue(publish_weather(branch, self.trigger, self.result))
         self.assertEqual(len(branch.commits), 1)
 
+    def test_lost_final_response_is_reconciled_as_success(self):
+        branch = Branch(self.trigger)
+        create_commit = branch.create_commit
+        calls = 0
+
+        def race_then_lose_final_response(head, result_text):
+            nonlocal calls
+            calls += 1
+            if calls < 3:
+                branch.advance({"README.md": f"concurrent edit {calls}"})
+                raise GitHubError("Branch changed before commit")
+            branch.lose_response = True
+            create_commit(head, result_text)
+
+        branch.create_commit = race_then_lose_final_response
+        self.assertTrue(publish_weather(branch, self.trigger, self.result, attempts=3))
+        self.assertEqual(calls, 3)
+        self.assertEqual(len(branch.commits), 1)
+
+    def test_request_replaced_on_final_attempt_is_skipped(self):
+        branch = Branch(self.trigger)
+        branch.before_commit = lambda: branch.advance({
+            "weather/trigger.json": json.dumps({**self.trigger, "request_id": "B"}),
+        })
+        self.assertFalse(publish_weather(branch, self.trigger, self.result, attempts=1))
+        self.assertEqual(branch.commits, [])
+
+    def test_failed_final_attempt_still_reports_failure(self):
+        branch = Branch(self.trigger)
+        branch.create_commit = mock.Mock(side_effect=GitHubError("Commit rejected"))
+        with self.assertRaises(GitHubError):
+            publish_weather(branch, self.trigger, self.result, attempts=3)
+        self.assertEqual(branch.create_commit.call_count, 3)
+
     def test_result_for_another_request_is_rejected(self):
         with self.assertRaises(ValueError):
             publish_weather(Branch(self.trigger), self.trigger, '{"request_id":"B"}')

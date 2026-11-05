@@ -54,6 +54,41 @@ class ForecastTests(unittest.TestCase):
         self.assertEqual(result["hourly"][0]["precipitation"], {"value": 0, "probability": 0})
         self.assertEqual(result["status"], "ok")
 
+    def test_upstream_alert_failure_is_not_reported_as_no_warnings(self):
+        payload = forecast()
+        payload["result"]["alert"] = {"status": "ok", "content": [], "adcodes": None}
+        result = weather.compact_forecast(payload)
+        self.assertIsNone(result["alerts"])
+        self.assertEqual(result["sections"]["alert"]["status"], "unavailable")
+        self.assertEqual(result["sections"]["alert"]["provider_status"], "ok")
+        self.assertEqual(result["status"], "partial")
+
+    def test_valid_empty_alert_response_remains_available(self):
+        payload = forecast()
+        payload["result"]["alert"] = {
+            "status": "ok", "content": [], "adcodes": [{"adcode": 110000, "name": "Beijing"}],
+        }
+        result = weather.compact_forecast(payload)
+        self.assertEqual(result["alerts"]["content"], [])
+        self.assertEqual(result["sections"]["alert"]["status"], "ok")
+        self.assertEqual(result["status"], "ok")
+
+    def test_existing_warnings_survive_missing_alert_coverage_metadata(self):
+        payload = forecast()
+        warning = {"title": "Wind warning", "code": "0501"}
+        payload["result"]["alert"] = {"status": "ok", "content": [warning], "adcodes": None}
+        result = weather.compact_forecast(payload)
+        self.assertEqual(result["alerts"]["content"], [warning])
+        self.assertEqual(result["sections"]["alert"]["status"], "partial")
+        self.assertEqual(result["status"], "partial")
+
+    def test_malformed_alert_content_is_marked_unavailable(self):
+        payload = forecast()
+        payload["result"]["alert"] = {"status": "ok", "content": None, "adcodes": []}
+        result = weather.compact_forecast(payload)
+        self.assertIsNone(result["alerts"])
+        self.assertEqual(result["sections"]["alert"]["status"], "unavailable")
+
     def test_hour_missing_from_every_series_is_reported(self):
         payload = forecast()
         payload["result"]["hourly"]["precipitation"].append({"datetime": T2, "value": 0})
