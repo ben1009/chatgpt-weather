@@ -1,8 +1,8 @@
 {
-  "request_id": "review-fix-verify-2026-11-05-03",
-  "query": "Verify reviewed weather fixes with current credentials",
+  "request_id": "review-fix-verify-2026-11-05-04",
+  "query": "Verify compact weather result and atomic publishing",
   "location": "北京朝阳区",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-05T19:00:00+08:00"
+  "requested_at": "2026-11-05T19:15:00+08:00"
 }
