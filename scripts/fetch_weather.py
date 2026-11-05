@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Fetch a Caiyun v2.6 forecast for the request in weather/trigger.json."""
+"""Fetch a compact Caiyun v2.6 forecast for weather/trigger.json."""
 
 import base64
 import hashlib
 import hmac
 import json
+import math
 import os
 import re
 import sys
@@ -37,18 +38,138 @@ def load_trigger() -> dict:
     if not isinstance(trigger, dict):
         fail("weather/trigger.json must contain a JSON object.")
 
-    if not isinstance(trigger.get("request_id"), str) or not trigger["request_id"].strip():
-        fail("weather/trigger.json must include a non-empty request_id.")
+    request_id = trigger.get("request_id")
+    if not isinstance(request_id, str) or not re.fullmatch(r"[A-Za-z0-9._-]{1,128}", request_id):
+        fail("request_id must be 1-128 ASCII letters, digits, dots, underscores, or hyphens.")
 
-    if not isinstance(trigger.get("location"), str) or not trigger["location"].strip():
-        fail("weather/trigger.json must include a non-empty location.")
+    location = trigger.get("location")
+    if not isinstance(location, str) or not location.strip() or len(location) > 200:
+        fail("location must be a non-empty string of at most 200 characters.")
+
+    query = trigger.get("query")
+    if query is not None and (not isinstance(query, str) or len(query) > 1000):
+        fail("query must be a string of at most 1000 characters.")
+
+    requested_at = trigger.get("requested_at")
+    if requested_at is not None and (not isinstance(requested_at, str) or len(requested_at) > 100):
+        fail("requested_at must be a string of at most 100 characters.")
 
     for name, lower, upper in (("longitude", -180, 180), ("latitude", -90, 90)):
         value = trigger.get(name)
-        if isinstance(value, bool) or not isinstance(value, (int, float)) or not lower <= value <= upper:
+        if (
+            isinstance(value, bool)
+            or not isinstance(value, (int, float))
+            or not math.isfinite(value)
+            or not lower <= value <= upper
+        ):
             fail(f"weather/trigger.json must include a valid {name}.")
 
     return trigger
+
+
+def index_series(block: dict, name: str, time_field: str) -> dict:
+    entries = block.get(name, [])
+    if not isinstance(entries, list):
+        return {}
+    return {
+        entry[time_field]: entry
+        for entry in entries
+        if isinstance(entry, dict) and isinstance(entry.get(time_field), str)
+    }
+
+
+def compact_series(
+    block: dict,
+    time_field: str,
+    series_names: tuple,
+    value_only_names: tuple = (),
+) -> list:
+    indexed = {name: index_series(block, name, time_field) for name in series_names}
+    times = list(
+        dict.fromkeys(
+            timestamp
+            for name in series_names
+            for timestamp in indexed[name]
+        )
+    )
+
+    compact = []
+    for timestamp in times:
+        item = {time_field: timestamp}
+        for name in series_names:
+            entry = indexed[name].get(timestamp)
+            if not entry:
+                continue
+            if name in value_only_names:
+                if "value" in entry:
+                    item[name] = entry["value"]
+            else:
+                values = {key: value for key, value in entry.items() if key != time_field}
+                if values:
+                    item[name] = values
+        compact.append(item)
+    return compact
+
+
+def compact_forecast(payload: dict) -> dict:
+    result = payload["result"]
+    daily_source = result.get("daily")
+    hourly_source = result.get("hourly")
+    daily_source = daily_source if isinstance(daily_source, dict) else {}
+    hourly_source = hourly_source if isinstance(hourly_source, dict) else {}
+
+    daily = compact_series(
+        daily_source,
+        "date",
+        (
+            "precipitation",
+            "precipitation_08h_20h",
+            "precipitation_20h_32h",
+            "temperature",
+            "temperature_08h_20h",
+            "temperature_20h_32h",
+            "skycon",
+            "skycon_08h_20h",
+            "skycon_20h_32h",
+        ),
+        ("skycon", "skycon_08h_20h", "skycon_20h_32h"),
+    )
+    hourly = compact_series(
+        hourly_source,
+        "datetime",
+        ("precipitation", "temperature", "apparent_temperature", "skycon"),
+        ("temperature", "apparent_temperature", "skycon"),
+    )
+
+    realtime_source = result.get("realtime")
+    realtime_source = realtime_source if isinstance(realtime_source, dict) else {}
+    current = {
+        name: realtime_source[name]
+        for name in ("temperature", "apparent_temperature", "humidity", "precipitation", "skycon", "wind")
+        if name in realtime_source
+    }
+
+    daily_dates = [item["date"] for item in daily]
+    hourly_times = [item["datetime"] for item in hourly]
+    return {
+        "api_version": payload.get("api_version"),
+        "timezone": payload.get("timezone"),
+        "unit": payload.get("unit"),
+        "coverage": {
+            "daily_start": daily_dates[0] if daily_dates else None,
+            "daily_end": daily_dates[-1] if daily_dates else None,
+            "daily_entries": len(daily),
+            "hourly_start": hourly_times[0] if hourly_times else None,
+            "hourly_end": hourly_times[-1] if hourly_times else None,
+            "hourly_entries": len(hourly),
+        },
+        "summary": result.get("forecast_keypoint"),
+        "hourly_summary": hourly_source.get("description"),
+        "current": current,
+        "alerts": result.get("alert"),
+        "daily": daily,
+        "hourly": hourly,
+    }
 
 
 def fetch_weather(trigger: dict) -> dict:
@@ -98,13 +219,15 @@ def fetch_weather(trigger: dict) -> dict:
 
     if not isinstance(payload, dict) or payload.get("status") != "ok":
         fail("Caiyun Weather API returned a failed response.")
+    if not isinstance(payload.get("result"), dict):
+        fail("Caiyun Weather API returned an invalid forecast response.")
 
     return payload
 
 
 def main() -> None:
     trigger = load_trigger()
-    forecast = fetch_weather(trigger)
+    response = fetch_weather(trigger)
     result = {
         "request_id": trigger["request_id"],
         "query": trigger.get("query"),
@@ -115,8 +238,8 @@ def main() -> None:
         },
         "requested_at": trigger.get("requested_at"),
         "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
-        "source": "Caiyun Weather API v2.6",
-        "data": forecast,
+        "source": "Caiyun Weather API",
+        **compact_forecast(response),
     }
     RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
     RESULT_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
