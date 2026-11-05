@@ -14,8 +14,9 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import uuid
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,23 +60,42 @@ def load_trigger() -> dict:
         if (
             isinstance(value, bool)
             or not isinstance(value, (int, float))
-            or not math.isfinite(value)
             or not lower <= value <= upper
+            or not math.isfinite(value)
         ):
             fail(f"weather/trigger.json must include a valid {name}.")
 
     return trigger
 
 
+def timestamp_key(value: str) -> float:
+    parsed = datetime.fromisoformat(value)
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.timestamp()
+
+
+def is_number(value) -> bool:
+    return (
+        isinstance(value, int) and not isinstance(value, bool)
+        or isinstance(value, float) and math.isfinite(value)
+    )
+
+
 def index_series(block: dict, name: str, time_field: str) -> dict:
     entries = block.get(name, [])
     if not isinstance(entries, list):
         return {}
-    return {
-        entry[time_field]: entry
-        for entry in entries
-        if isinstance(entry, dict) and isinstance(entry.get(time_field), str)
-    }
+    indexed = {}
+    for entry in entries:
+        if not isinstance(entry, dict) or not isinstance(entry.get(time_field), str):
+            continue
+        try:
+            timestamp_key(entry[time_field])
+        except (ValueError, OverflowError):
+            continue
+        indexed[entry[time_field]] = entry
+    return indexed
 
 
 def compact_series(
@@ -85,12 +105,9 @@ def compact_series(
     value_only_names: tuple = (),
 ) -> list:
     indexed = {name: index_series(block, name, time_field) for name in series_names}
-    times = list(
-        dict.fromkeys(
-            timestamp
-            for name in series_names
-            for timestamp in indexed[name]
-        )
+    times = sorted(
+        {timestamp for name in series_names for timestamp in indexed[name]},
+        key=timestamp_key,
     )
 
     compact = []
@@ -101,22 +118,85 @@ def compact_series(
             if not entry:
                 continue
             if name in value_only_names:
-                if "value" in entry:
-                    item[name] = entry["value"]
+                value = entry.get("value")
+                if name.startswith("skycon"):
+                    if isinstance(value, str) and value:
+                        item[name] = value
+                elif is_number(value):
+                    item[name] = value
             else:
-                values = {key: value for key, value in entry.items() if key != time_field}
+                values = {
+                    key: value for key, value in entry.items()
+                    if key != time_field and is_number(value)
+                }
                 if values:
                     item[name] = values
-        compact.append(item)
+        if len(item) > 1:
+            compact.append(item)
     return compact
+
+
+def section_source(result: dict, name: str) -> tuple:
+    source = result.get(name)
+    if not isinstance(source, dict):
+        return {}, {"status": "missing", "error": "Provider did not return this section."}
+    info = {"status": source.get("status", "missing")}
+    if info["status"] != "ok":
+        message = str(source.get("error") or "Provider did not return a usable section.")
+        for key in ("CAIYUN_APP_KEY", "CAIYUN_APP_SECRET"):
+            credential = os.environ.get(key)
+            if credential:
+                message = message.replace(credential, "[redacted]")
+        info["error"] = message[:300]
+        return {}, info
+    return source, info
+
+
+def precipitation_coverage(records: list, time_field: str, timezone_name: str | None = None) -> dict:
+    times = [item[time_field] for item in records if item.get("precipitation")]
+    if time_field == "date":
+        key = lambda value: datetime.fromisoformat(value).date().toordinal()
+        format_missing = lambda value: date.fromordinal(value).isoformat()
+        step = 1
+    else:
+        key = timestamp_key
+        local_timezone = (
+            datetime.fromisoformat(records[0][time_field]).tzinfo if records else None
+        ) or timezone.utc
+        if timezone_name:
+            try:
+                local_timezone = ZoneInfo(timezone_name)
+            except ZoneInfoNotFoundError:
+                pass
+        format_missing = lambda value: datetime.fromtimestamp(value, local_timezone).isoformat(timespec="minutes")
+        step = 3600
+    labels = {key(item[time_field]): item[time_field] for item in records}
+    rain_keys = {key(value) for value in times}
+    expected = set(labels)
+    cadence_valid = True
+    if labels:
+        first, last = min(labels), max(labels)
+        slots = int((last - first) // step) + 1
+        # A malformed upstream date must not create an unbounded gap list.
+        cadence_valid = slots <= 1000 and all(
+            abs((value - first) / step - round((value - first) / step)) < 1e-9
+            for value in labels
+        )
+        if slots <= 1000:
+            expected.update(first + step * offset for offset in range(slots))
+    return {
+        "start": times[0] if times else None,
+        "end": times[-1] if times else None,
+        "entries": len(times),
+        "missing_times": [labels.get(value) or format_missing(value) for value in sorted(expected - rain_keys)],
+        "cadence_valid": cadence_valid,
+    }
 
 
 def compact_forecast(payload: dict) -> dict:
     result = payload["result"]
-    daily_source = result.get("daily")
-    hourly_source = result.get("hourly")
-    daily_source = daily_source if isinstance(daily_source, dict) else {}
-    hourly_source = hourly_source if isinstance(hourly_source, dict) else {}
+    daily_source, daily_info = section_source(result, "daily")
+    hourly_source, hourly_info = section_source(result, "hourly")
 
     daily = compact_series(
         daily_source,
@@ -141,8 +221,11 @@ def compact_forecast(payload: dict) -> dict:
         ("temperature", "apparent_temperature", "skycon"),
     )
 
-    realtime_source = result.get("realtime")
-    realtime_source = realtime_source if isinstance(realtime_source, dict) else {}
+    if not daily and not hourly:
+        fail("Caiyun returned no usable daily or hourly forecast.")
+
+    realtime_source, realtime_info = section_source(result, "realtime")
+    alert_source, alert_info = section_source(result, "alert")
     current = {
         name: realtime_source[name]
         for name in ("temperature", "apparent_temperature", "humidity", "precipitation", "skycon", "wind")
@@ -151,7 +234,26 @@ def compact_forecast(payload: dict) -> dict:
 
     daily_dates = [item["date"] for item in daily]
     hourly_times = [item["datetime"] for item in hourly]
+    daily_rain = precipitation_coverage(daily, "date", payload.get("timezone"))
+    hourly_rain = precipitation_coverage(hourly, "datetime", payload.get("timezone"))
+    daily_info["precipitation_complete"] = bool(daily) and daily_rain["cadence_valid"] and not daily_rain["missing_times"]
+    hourly_info["precipitation_complete"] = bool(hourly) and hourly_rain["cadence_valid"] and not hourly_rain["missing_times"]
+    for records, info in ((daily, daily_info), (hourly, hourly_info)):
+        if not records and info["status"] == "ok":
+            info.update(status="empty", error="Provider returned no usable forecast values.")
+    partial = (
+        any(info["status"] != "ok" for info in (daily_info, hourly_info, realtime_info))
+        or not daily_info["precipitation_complete"]
+        or not hourly_info["precipitation_complete"]
+    )
     return {
+        "status": "partial" if partial else "ok",
+        "sections": {
+            "daily": daily_info,
+            "hourly": hourly_info,
+            "realtime": realtime_info,
+            "alert": alert_info,
+        },
         "api_version": payload.get("api_version"),
         "timezone": payload.get("timezone"),
         "unit": payload.get("unit"),
@@ -162,11 +264,12 @@ def compact_forecast(payload: dict) -> dict:
             "hourly_start": hourly_times[0] if hourly_times else None,
             "hourly_end": hourly_times[-1] if hourly_times else None,
             "hourly_entries": len(hourly),
+            "precipitation": {"daily": daily_rain, "hourly": hourly_rain},
         },
         "summary": result.get("forecast_keypoint"),
         "hourly_summary": hourly_source.get("description"),
         "current": current,
-        "alerts": result.get("alert"),
+        "alerts": alert_source if alert_info["status"] == "ok" else None,
         "daily": daily,
         "hourly": hourly,
     }
