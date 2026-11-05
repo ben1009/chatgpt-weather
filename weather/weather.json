@@ -1,4 +1,3257 @@
 {
-  "status": "not_requested",
-  "message": "This file is replaced after a workflow run finishes."
+  "request_id": "bootstrap-2026-11-05-01",
+  "query": "验证天气工作流和 API 连通性",
+  "location": "北京朝阳区",
+  "coordinates": {
+    "longitude": 116.4436,
+    "latitude": 39.9219
+  },
+  "requested_at": "2026-11-05T18:00:00+08:00",
+  "fetched_at": "2026-11-05T10:44:56Z",
+  "source": "Caiyun Weather API v2.6",
+  "data": {
+    "status": "ok",
+    "api_version": "v2.6",
+    "api_status": "active",
+    "lang": "zh_CN",
+    "unit": "metric",
+    "tzshift": 28800,
+    "timezone": "Asia/Shanghai",
+    "server_time": 1793875495,
+    "location": [
+      39.9219,
+      116.4436
+    ],
+    "result": {
+      "realtime": {
+        "status": "ok",
+        "temperature": 12.46,
+        "humidity": 0.2,
+        "cloudrate": 0.01,
+        "skycon": "CLEAR_NIGHT",
+        "visibility": 21.65,
+        "dswrf": 0.0,
+        "wind": {
+          "speed": 5.61,
+          "direction": 12.61
+        },
+        "pressure": 101504.06,
+        "apparent_temperature": 9.8,
+        "precipitation": {
+          "local": {
+            "status": "ok",
+            "datasource": "radar",
+            "intensity": 0.0
+          },
+          "nearest": {
+            "status": "ok",
+            "distance": 122.02,
+            "intensity": 0.1875
+          }
+        },
+        "air_quality": {
+          "pm25": 3,
+          "pm10": 6,
+          "o3": 68,
+          "so2": 1,
+          "no2": 10,
+          "co": 0.3,
+          "aqi": {
+            "chn": 22,
+            "usa": 63
+          },
+          "description": {
+            "chn": "优",
+            "usa": "良"
+          }
+        },
+        "life_index": {
+          "ultraviolet": {
+            "index": 0,
+            "desc": "无"
+          },
+          "comfort": {
+            "index": 7,
+            "desc": "冷"
+          }
+        }
+      },
+      "hourly": {
+        "status": "ok",
+        "description": "未来24小时晴",
+        "precipitation": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 0.0,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 0.0588,
+            "probability": 0
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 0.0903,
+            "probability": 60
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 0.2565,
+            "probability": 60
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 0.5041,
+            "probability": 60
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 0.9309,
+            "probability": 70
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 1.7163,
+            "probability": 70
+          }
+        ],
+        "temperature": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 12.46
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 11.23
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 9.98
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 9.02
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 7.91
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 7.05
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 6.19
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 5.83
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 5.48
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 5.04
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 4.32
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 3.81
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 3.35
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 3.1
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 4.97
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 8.74
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 10.68
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 11.83
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 12.69
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 13.58
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 14.06
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 14.1
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 13.71
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 12.44
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 10.83
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 9.64
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 8.46
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 7.61
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 6.98
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 6.42
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 5.78
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 5.26
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 4.63
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 4.02
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 3.54
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 3.26
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 3.13
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 3.1
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 4.35
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 5.86
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 7.12
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 7.49
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 7.71
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 8.01
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 7.89
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 7.88
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 8.28
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 7.25
+          }
+        ],
+        "apparent_temperature": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 9.8
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 7.8
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 7.1
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 5.7
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 4.6
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 3.9
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 3.2
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 3.0
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 2.7
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 2.3
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 1.7
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 1.2
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 0.8
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 0.5
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 1.9
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 5.5
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 7.6
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 8.9
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 9.7
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 10.6
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 11.2
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 11.2
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 11.0
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 9.8
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 8.2
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 7.1
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 6.0
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 5.3
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 4.8
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 4.2
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 3.5
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 3.0
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 2.2
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 1.5
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 0.9
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 0.6
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 0.4
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 0.3
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 1.4
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 3.0
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 4.2
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 4.5
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 4.7
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 5.2
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 5.3
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 5.7
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 5.9
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 5.0
+          }
+        ],
+        "wind": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "speed": 5.61,
+            "direction": 12.61
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "speed": 8.96,
+            "direction": 338.07
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "speed": 5.64,
+            "direction": 29.84
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "speed": 7.54,
+            "direction": 35.28
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "speed": 7.02,
+            "direction": 21.04
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "speed": 6.21,
+            "direction": 7.33
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "speed": 5.12,
+            "direction": 2.02
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "speed": 4.07,
+            "direction": 349.29
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "speed": 4.14,
+            "direction": 344.88
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "speed": 3.97,
+            "direction": 342.06
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "speed": 3.25,
+            "direction": 347.2
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "speed": 2.74,
+            "direction": 355.49
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "speed": 2.49,
+            "direction": 3.32
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "speed": 2.74,
+            "direction": 357.74
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "speed": 5.56,
+            "direction": 335.1
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "speed": 7.65,
+            "direction": 327.88
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "speed": 7.07,
+            "direction": 329.39
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "speed": 6.3,
+            "direction": 325.95
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "speed": 6.86,
+            "direction": 326.56
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "speed": 6.93,
+            "direction": 325.15
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "speed": 6.71,
+            "direction": 308.47
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "speed": 6.69,
+            "direction": 258.51
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "speed": 6.05,
+            "direction": 220.42
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "speed": 5.46,
+            "direction": 208.76
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "speed": 5.07,
+            "direction": 210.75
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "speed": 4.48,
+            "direction": 216.5
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "speed": 3.83,
+            "direction": 216.98
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "speed": 2.76,
+            "direction": 215.97
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "speed": 2.24,
+            "direction": 126.5
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "speed": 2.42,
+            "direction": 149.62
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "speed": 2.34,
+            "direction": 165.75
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "speed": 2.11,
+            "direction": 156.93
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "speed": 2.59,
+            "direction": 80.41
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "speed": 2.84,
+            "direction": 77.55
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "speed": 2.89,
+            "direction": 67.27
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "speed": 2.87,
+            "direction": 67.93
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "speed": 3.44,
+            "direction": 74.22
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "speed": 3.84,
+            "direction": 83.54
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "speed": 5.38,
+            "direction": 94.22
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "speed": 5.74,
+            "direction": 93.6
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "speed": 6.51,
+            "direction": 79.81
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "speed": 7.1,
+            "direction": 87.96
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "speed": 7.85,
+            "direction": 99.51
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "speed": 8.3,
+            "direction": 103.55
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "speed": 7.74,
+            "direction": 95.34
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "speed": 7.11,
+            "direction": 80.97
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "speed": 8.6,
+            "direction": 77.19
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "speed": 8.18,
+            "direction": 92.77
+          }
+        ],
+        "humidity": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 0.2
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 0.16
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 0.17
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 0.16
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 0.16
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 0.17
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 0.18
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 0.2
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 0.23
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 0.25
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 0.28
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 0.3
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 0.26
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 0.2
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 0.17
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 0.15
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 0.14
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 0.13
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 0.14
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 0.15
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 0.16
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 0.2
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 0.23
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 0.26
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 0.28
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 0.3
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 0.31
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 0.31
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 0.32
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 0.34
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 0.33
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 0.32
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 0.34
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 0.38
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 0.48
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 0.58
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 0.68
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 0.7
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 0.78
+          }
+        ],
+        "cloudrate": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 0.01
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 0.02
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 0.01
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 0.04
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 0.07
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 0.1
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 0.13
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 0.16
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 0.06
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 0.03
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 0.01
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 0.05
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 0.23
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 0.32
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 0.17
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 0.02
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 0.08
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 0.09
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 0.3
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 0.45
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 0.45
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 0.61
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 0.29
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 0.55
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 0.22
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 0.48
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 0.23
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 0.45
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 0.38
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 0.81
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 1.0
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 1.0
+          }
+        ],
+        "skycon": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": "PARTLY_CLOUDY_DAY"
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": "PARTLY_CLOUDY_DAY"
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": "CLOUDY"
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": "LIGHT_RAIN"
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": "LIGHT_RAIN"
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": "LIGHT_RAIN"
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": "MODERATE_RAIN"
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": "MODERATE_RAIN"
+          }
+        ],
+        "pressure": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 101504.055
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 101577.15
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 101660.43
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 101755.13
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 101850.234
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 101911.18
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 101924.555
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 101953.4
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 101984.95
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 101990.516
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 102019.734
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 102077.43
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 102122.4
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 102196.15
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 102282.81
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 102302.85
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 102285.99
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 102247.43
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 102168.09
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 102093.16
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 102043.64
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 102047.98
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 102072.69
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 102110.69
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 102183.37
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 102255.84
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 102303.9
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 102353.81
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 102408.47
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 102439.8
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 102470.6
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 102515.086
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 102544.81
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 102540.73
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 102554.2
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 102612.414
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 102641.68
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 102702.914
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 102775.22
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 102824.42
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 102792.484
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 102777.94
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 102709.78
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 102627.46
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 102563.55
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 102524.55
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 102526.69
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 102566.336
+          }
+        ],
+        "visibility": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 21.65
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 21.66
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 21.66
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 21.35
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 20.86
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 19.84
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 19.84
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 19.52
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 19.52
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 18.18
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 17.47
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 17.3
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 16.58
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 15.87
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 16.59
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 17.65
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 19.86
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 21.67
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 21.68
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 21.69
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 21.69
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 21.69
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 21.68
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 21.68
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 21.68
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 21.29
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 20.91
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 20.91
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 19.57
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 19.57
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 18.85
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 16.79
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 16.08
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 15.36
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 15.36
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 15.74
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 15.19
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 16.46
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 16.46
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 10.22
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 11.18
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 8.84
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 9.02
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 5.01
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 3.67
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 3.37
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 3.77
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 2.68
+          }
+        ],
+        "dswrf": [
+          {
+            "datetime": "2026-11-05T18:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T19:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T20:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T21:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T22:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-05T23:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T00:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T01:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T02:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T03:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T04:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T05:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T06:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T07:00+08:00",
+            "value": 5.359375
+          },
+          {
+            "datetime": "2026-11-06T08:00+08:00",
+            "value": 122.3125
+          },
+          {
+            "datetime": "2026-11-06T09:00+08:00",
+            "value": 299.5625
+          },
+          {
+            "datetime": "2026-11-06T10:00+08:00",
+            "value": 443.40625
+          },
+          {
+            "datetime": "2026-11-06T11:00+08:00",
+            "value": 531.1406
+          },
+          {
+            "datetime": "2026-11-06T12:00+08:00",
+            "value": 571.625
+          },
+          {
+            "datetime": "2026-11-06T13:00+08:00",
+            "value": 544.78125
+          },
+          {
+            "datetime": "2026-11-06T14:00+08:00",
+            "value": 459.15625
+          },
+          {
+            "datetime": "2026-11-06T15:00+08:00",
+            "value": 325.0625
+          },
+          {
+            "datetime": "2026-11-06T16:00+08:00",
+            "value": 160.5
+          },
+          {
+            "datetime": "2026-11-06T17:00+08:00",
+            "value": 6.796875
+          },
+          {
+            "datetime": "2026-11-06T18:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T19:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T20:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T21:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T22:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-06T23:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T00:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T01:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T02:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T03:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T04:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T05:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T06:00+08:00",
+            "value": 0.0
+          },
+          {
+            "datetime": "2026-11-07T07:00+08:00",
+            "value": 4.1875
+          },
+          {
+            "datetime": "2026-11-07T08:00+08:00",
+            "value": 111.625
+          },
+          {
+            "datetime": "2026-11-07T09:00+08:00",
+            "value": 278.73438
+          },
+          {
+            "datetime": "2026-11-07T10:00+08:00",
+            "value": 411.65625
+          },
+          {
+            "datetime": "2026-11-07T11:00+08:00",
+            "value": 437.73438
+          },
+          {
+            "datetime": "2026-11-07T12:00+08:00",
+            "value": 451.65625
+          },
+          {
+            "datetime": "2026-11-07T13:00+08:00",
+            "value": 425.5625
+          },
+          {
+            "datetime": "2026-11-07T14:00+08:00",
+            "value": 316.3125
+          },
+          {
+            "datetime": "2026-11-07T15:00+08:00",
+            "value": 143.0
+          },
+          {
+            "datetime": "2026-11-07T16:00+08:00",
+            "value": 19.359375
+          },
+          {
+            "datetime": "2026-11-07T17:00+08:00",
+            "value": 0.21875
+          }
+        ],
+        "air_quality": {
+          "aqi": [
+            {
+              "datetime": "2026-11-05T18:00+08:00",
+              "value": {
+                "chn": 22,
+                "usa": 63
+              }
+            },
+            {
+              "datetime": "2026-11-05T19:00+08:00",
+              "value": {
+                "chn": 23,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-05T20:00+08:00",
+              "value": {
+                "chn": 22,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-05T21:00+08:00",
+              "value": {
+                "chn": 22,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-05T22:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-05T23:00+08:00",
+              "value": {
+                "chn": 20,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-06T00:00+08:00",
+              "value": {
+                "chn": 19,
+                "usa": 18
+              }
+            },
+            {
+              "datetime": "2026-11-06T01:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 22
+              }
+            },
+            {
+              "datetime": "2026-11-06T02:00+08:00",
+              "value": {
+                "chn": 23,
+                "usa": 30
+              }
+            },
+            {
+              "datetime": "2026-11-06T03:00+08:00",
+              "value": {
+                "chn": 25,
+                "usa": 34
+              }
+            },
+            {
+              "datetime": "2026-11-06T04:00+08:00",
+              "value": {
+                "chn": 26,
+                "usa": 34
+              }
+            },
+            {
+              "datetime": "2026-11-06T05:00+08:00",
+              "value": {
+                "chn": 26,
+                "usa": 34
+              }
+            },
+            {
+              "datetime": "2026-11-06T06:00+08:00",
+              "value": {
+                "chn": 27,
+                "usa": 38
+              }
+            },
+            {
+              "datetime": "2026-11-06T07:00+08:00",
+              "value": {
+                "chn": 29,
+                "usa": 46
+              }
+            },
+            {
+              "datetime": "2026-11-06T08:00+08:00",
+              "value": {
+                "chn": 30,
+                "usa": 50
+              }
+            },
+            {
+              "datetime": "2026-11-06T09:00+08:00",
+              "value": {
+                "chn": 28,
+                "usa": 42
+              }
+            },
+            {
+              "datetime": "2026-11-06T10:00+08:00",
+              "value": {
+                "chn": 25,
+                "usa": 34
+              }
+            },
+            {
+              "datetime": "2026-11-06T11:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 22
+              }
+            },
+            {
+              "datetime": "2026-11-06T12:00+08:00",
+              "value": {
+                "chn": 19,
+                "usa": 18
+              }
+            },
+            {
+              "datetime": "2026-11-06T13:00+08:00",
+              "value": {
+                "chn": 20,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-06T14:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-06T15:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 14
+              }
+            },
+            {
+              "datetime": "2026-11-06T16:00+08:00",
+              "value": {
+                "chn": 21,
+                "usa": 18
+              }
+            },
+            {
+              "datetime": "2026-11-06T17:00+08:00",
+              "value": {
+                "chn": 22,
+                "usa": 22
+              }
+            },
+            {
+              "datetime": "2026-11-06T18:00+08:00",
+              "value": {
+                "chn": 30,
+                "usa": 38
+              }
+            },
+            {
+              "datetime": "2026-11-06T19:00+08:00",
+              "value": {
+                "chn": 39,
+                "usa": 54
+              }
+            },
+            {
+              "datetime": "2026-11-06T20:00+08:00",
+              "value": {
+                "chn": 48,
+                "usa": 65
+              }
+            },
+            {
+              "datetime": "2026-11-06T21:00+08:00",
+              "value": {
+                "chn": 53,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-06T22:00+08:00",
+              "value": {
+                "chn": 55,
+                "usa": 78
+              }
+            },
+            {
+              "datetime": "2026-11-06T23:00+08:00",
+              "value": {
+                "chn": 54,
+                "usa": 76
+              }
+            },
+            {
+              "datetime": "2026-11-07T00:00+08:00",
+              "value": {
+                "chn": 53,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-07T01:00+08:00",
+              "value": {
+                "chn": 50,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T02:00+08:00",
+              "value": {
+                "chn": 49,
+                "usa": 69
+              }
+            },
+            {
+              "datetime": "2026-11-07T03:00+08:00",
+              "value": {
+                "chn": 47,
+                "usa": 67
+              }
+            },
+            {
+              "datetime": "2026-11-07T04:00+08:00",
+              "value": {
+                "chn": 46,
+                "usa": 65
+              }
+            },
+            {
+              "datetime": "2026-11-07T05:00+08:00",
+              "value": {
+                "chn": 45,
+                "usa": 65
+              }
+            },
+            {
+              "datetime": "2026-11-07T06:00+08:00",
+              "value": {
+                "chn": 44,
+                "usa": 65
+              }
+            },
+            {
+              "datetime": "2026-11-07T07:00+08:00",
+              "value": {
+                "chn": 45,
+                "usa": 69
+              }
+            },
+            {
+              "datetime": "2026-11-07T08:00+08:00",
+              "value": {
+                "chn": 46,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T09:00+08:00",
+              "value": {
+                "chn": 46,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T10:00+08:00",
+              "value": {
+                "chn": 45,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T11:00+08:00",
+              "value": {
+                "chn": 44,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-07T12:00+08:00",
+              "value": {
+                "chn": 42,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-07T13:00+08:00",
+              "value": {
+                "chn": 41,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-07T14:00+08:00",
+              "value": {
+                "chn": 39,
+                "usa": 73
+              }
+            },
+            {
+              "datetime": "2026-11-07T15:00+08:00",
+              "value": {
+                "chn": 38,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T16:00+08:00",
+              "value": {
+                "chn": 37,
+                "usa": 71
+              }
+            },
+            {
+              "datetime": "2026-11-07T17:00+08:00",
+              "value": {
+                "chn": 36,
+                "usa": 71
+              }
+            }
+          ],
+          "pm25": [
+            {
+              "datetime": "2026-11-05T18:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-05T19:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-05T20:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-05T21:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-05T22:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-05T23:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-06T00:00+08:00",
+              "value": 4
+            },
+            {
+              "datetime": "2026-11-06T01:00+08:00",
+              "value": 5
+            },
+            {
+              "datetime": "2026-11-06T02:00+08:00",
+              "value": 7
+            },
+            {
+              "datetime": "2026-11-06T03:00+08:00",
+              "value": 8
+            },
+            {
+              "datetime": "2026-11-06T04:00+08:00",
+              "value": 8
+            },
+            {
+              "datetime": "2026-11-06T05:00+08:00",
+              "value": 8
+            },
+            {
+              "datetime": "2026-11-06T06:00+08:00",
+              "value": 9
+            },
+            {
+              "datetime": "2026-11-06T07:00+08:00",
+              "value": 11
+            },
+            {
+              "datetime": "2026-11-06T08:00+08:00",
+              "value": 12
+            },
+            {
+              "datetime": "2026-11-06T09:00+08:00",
+              "value": 10
+            },
+            {
+              "datetime": "2026-11-06T10:00+08:00",
+              "value": 8
+            },
+            {
+              "datetime": "2026-11-06T11:00+08:00",
+              "value": 5
+            },
+            {
+              "datetime": "2026-11-06T12:00+08:00",
+              "value": 4
+            },
+            {
+              "datetime": "2026-11-06T13:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-06T14:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-06T15:00+08:00",
+              "value": 3
+            },
+            {
+              "datetime": "2026-11-06T16:00+08:00",
+              "value": 4
+            },
+            {
+              "datetime": "2026-11-06T17:00+08:00",
+              "value": 5
+            },
+            {
+              "datetime": "2026-11-06T18:00+08:00",
+              "value": 9
+            },
+            {
+              "datetime": "2026-11-06T19:00+08:00",
+              "value": 14
+            },
+            {
+              "datetime": "2026-11-06T20:00+08:00",
+              "value": 19
+            },
+            {
+              "datetime": "2026-11-06T21:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-06T22:00+08:00",
+              "value": 25
+            },
+            {
+              "datetime": "2026-11-06T23:00+08:00",
+              "value": 24
+            },
+            {
+              "datetime": "2026-11-07T00:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-07T01:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T02:00+08:00",
+              "value": 21
+            },
+            {
+              "datetime": "2026-11-07T03:00+08:00",
+              "value": 20
+            },
+            {
+              "datetime": "2026-11-07T04:00+08:00",
+              "value": 19
+            },
+            {
+              "datetime": "2026-11-07T05:00+08:00",
+              "value": 19
+            },
+            {
+              "datetime": "2026-11-07T06:00+08:00",
+              "value": 19
+            },
+            {
+              "datetime": "2026-11-07T07:00+08:00",
+              "value": 21
+            },
+            {
+              "datetime": "2026-11-07T08:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T09:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T10:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T11:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-07T12:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-07T13:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-07T14:00+08:00",
+              "value": 23
+            },
+            {
+              "datetime": "2026-11-07T15:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T16:00+08:00",
+              "value": 22
+            },
+            {
+              "datetime": "2026-11-07T17:00+08:00",
+              "value": 22
+            }
+          ]
+        }
+      },
+      "daily": {
+        "status": "ok",
+        "astro": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "sunrise": {
+              "time": "06:47"
+            },
+            "sunset": {
+              "time": "17:08"
+            }
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "sunrise": {
+              "time": "06:48"
+            },
+            "sunset": {
+              "time": "17:07"
+            }
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "sunrise": {
+              "time": "06:49"
+            },
+            "sunset": {
+              "time": "17:06"
+            }
+          }
+        ],
+        "precipitation_08h_20h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 1.7163,
+            "min": 0.0,
+            "avg": 0.3331,
+            "probability": 60
+          }
+        ],
+        "precipitation_20h_32h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 1.4317,
+            "min": 0.0635,
+            "avg": 0.7291,
+            "probability": 70
+          }
+        ],
+        "precipitation": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 0.0,
+            "min": 0.0,
+            "avg": 0.0,
+            "probability": 0
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 1.7163,
+            "min": 0.0,
+            "avg": 0.3847,
+            "probability": 60
+          }
+        ],
+        "temperature": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 16.0,
+            "min": 4.75,
+            "avg": 9.61
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 14.1,
+            "min": 3.1,
+            "avg": 8.49
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 8.28,
+            "min": 2.46,
+            "avg": 5.35
+          }
+        ],
+        "temperature_08h_20h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 16.0,
+            "min": 5.6,
+            "avg": 13.63
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 14.1,
+            "min": 3.1,
+            "avg": 10.89
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 8.28,
+            "min": 3.1,
+            "avg": 6.82
+          }
+        ],
+        "temperature_20h_32h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 11.23,
+            "min": 3.35,
+            "avg": 6.6
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 9.64,
+            "min": 3.13,
+            "avg": 5.73
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 5.37,
+            "min": 2.41,
+            "avg": 3.16
+          }
+        ],
+        "wind": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": {
+              "speed": 15.7,
+              "direction": 308.76
+            },
+            "min": {
+              "speed": 2.01,
+              "direction": 14.53
+            },
+            "avg": {
+              "speed": 7.58,
+              "direction": 332.62
+            }
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": {
+              "speed": 7.65,
+              "direction": 327.88
+            },
+            "min": {
+              "speed": 2.24,
+              "direction": 126.5
+            },
+            "avg": {
+              "speed": 4.77,
+              "direction": 308.21
+            }
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": {
+              "speed": 8.6,
+              "direction": 77.19
+            },
+            "min": {
+              "speed": 2.11,
+              "direction": 156.93
+            },
+            "avg": {
+              "speed": 5.95,
+              "direction": 91.47
+            }
+          }
+        ],
+        "wind_08h_20h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": {
+              "speed": 15.7,
+              "direction": 308.76
+            },
+            "min": {
+              "speed": 5.01,
+              "direction": 322.88
+            },
+            "avg": {
+              "speed": 9.8,
+              "direction": 315.77
+            }
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": {
+              "speed": 7.65,
+              "direction": 327.88
+            },
+            "min": {
+              "speed": 2.74,
+              "direction": 357.74
+            },
+            "avg": {
+              "speed": 4.14,
+              "direction": 301.62
+            }
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": {
+              "speed": 8.6,
+              "direction": 77.19
+            },
+            "min": {
+              "speed": 3.84,
+              "direction": 83.54
+            },
+            "avg": {
+              "speed": 6.98,
+              "direction": 90.57
+            }
+          }
+        ],
+        "wind_20h_32h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": {
+              "speed": 8.96,
+              "direction": 338.07
+            },
+            "min": {
+              "speed": 2.49,
+              "direction": 3.32
+            },
+            "avg": {
+              "speed": 5.1,
+              "direction": 3.45
+            }
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": {
+              "speed": 4.48,
+              "direction": 216.5
+            },
+            "min": {
+              "speed": 2.11,
+              "direction": 156.93
+            },
+            "avg": {
+              "speed": 2.9,
+              "direction": 136.28
+            }
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": {
+              "speed": 8.4,
+              "direction": 92.46
+            },
+            "min": {
+              "speed": 5.5,
+              "direction": 42.88
+            },
+            "avg": {
+              "speed": 6.9,
+              "direction": 66.91
+            }
+          }
+        ],
+        "humidity": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 0.84,
+            "min": 0.13,
+            "avg": 0.17
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 0.33,
+            "min": 0.13,
+            "avg": 0.23
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 0.92,
+            "min": 0.29,
+            "avg": 0.53
+          }
+        ],
+        "cloudrate": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 0.85,
+            "min": 0.0,
+            "avg": 0.01
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 0.61,
+            "min": 0.0,
+            "avg": 0.15
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 1.0,
+            "min": 0.22,
+            "avg": 0.81
+          }
+        ],
+        "pressure": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 101911.18,
+            "min": 100942.56,
+            "avg": 101709.7
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 102439.8,
+            "min": 101924.56,
+            "avg": 102161.24
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 102824.42,
+            "min": 102470.6,
+            "avg": 102644.04
+          }
+        ],
+        "visibility": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 21.67,
+            "min": 3.14,
+            "avg": 21.17
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 21.69,
+            "min": 15.87,
+            "avg": 19.75
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 18.85,
+            "min": 0.31,
+            "avg": 8.66
+          }
+        ],
+        "dswrf": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "max": 567.8,
+            "min": 0.0,
+            "avg": 0.0
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "max": 571.6,
+            "min": 0.0,
+            "avg": 144.6
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "max": 451.7,
+            "min": 0.0,
+            "avg": 108.3
+          }
+        ],
+        "air_quality": {
+          "aqi": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "max": {
+                "chn": 156,
+                "usa": 183
+              },
+              "avg": {
+                "chn": 22,
+                "usa": 22
+              },
+              "min": {
+                "chn": 20,
+                "usa": 14
+              }
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "max": {
+                "chn": 55,
+                "usa": 78
+              },
+              "avg": {
+                "chn": 29,
+                "usa": 37
+              },
+              "min": {
+                "chn": 19,
+                "usa": 14
+              }
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "max": {
+                "chn": 53,
+                "usa": 78
+              },
+              "avg": {
+                "chn": 42,
+                "usa": 71
+              },
+              "min": {
+                "chn": 33,
+                "usa": 65
+              }
+            }
+          ],
+          "pm25": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "max": 119,
+              "avg": 3,
+              "min": 3
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "max": 25,
+              "avg": 9,
+              "min": 3
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "max": 25,
+              "avg": 22,
+              "min": 19
+            }
+          ]
+        },
+        "skycon": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "value": "LIGHT_RAIN"
+          }
+        ],
+        "skycon_08h_20h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "value": "CLEAR_DAY"
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "value": "LIGHT_RAIN"
+          }
+        ],
+        "skycon_20h_32h": [
+          {
+            "date": "2026-11-05T00:00+08:00",
+            "value": "CLEAR_NIGHT"
+          },
+          {
+            "date": "2026-11-06T00:00+08:00",
+            "value": "PARTLY_CLOUDY_NIGHT"
+          },
+          {
+            "date": "2026-11-07T00:00+08:00",
+            "value": "MODERATE_RAIN"
+          }
+        ],
+        "life_index": {
+          "ultraviolet": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "index": "1",
+              "desc": "最弱"
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "index": "1",
+              "desc": "最弱"
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "index": "1",
+              "desc": "最弱"
+            }
+          ],
+          "carWashing": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "index": "1",
+              "desc": "适宜"
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "index": "3",
+              "desc": "较不适宜"
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "index": "3",
+              "desc": "较不适宜"
+            }
+          ],
+          "dressing": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "index": "6",
+              "desc": "冷"
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "index": "6",
+              "desc": "冷"
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "index": "6",
+              "desc": "冷"
+            }
+          ],
+          "comfort": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "index": "7",
+              "desc": "冷"
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "index": "7",
+              "desc": "冷"
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "index": "8",
+              "desc": "很冷"
+            }
+          ],
+          "coldRisk": [
+            {
+              "date": "2026-11-05T00:00+08:00",
+              "index": "4",
+              "desc": "极易发"
+            },
+            {
+              "date": "2026-11-06T00:00+08:00",
+              "index": "4",
+              "desc": "极易发"
+            },
+            {
+              "date": "2026-11-07T00:00+08:00",
+              "index": "3",
+              "desc": "易发"
+            }
+          ]
+        }
+      },
+      "primary": 0,
+      "forecast_keypoint": "未来24小时晴"
+    }
+  }
 }
