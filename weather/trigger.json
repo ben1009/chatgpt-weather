@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-dongcheng-20261105-01",
-  "query": "查询北京市东城区天气，重点查看2026年11月7日至8日周末降雨",
-  "location": "北京市东城区",
-  "longitude": 116.422,
-  "latitude": 39.928,
+  "request_id": "chatgpt-mudanjiang-20261105-01",
+  "query": "查询黑龙江省牡丹江市城区未来48小时天气，重点查看2026年11月7日至8日周末天气和降水",
+  "location": "黑龙江省牡丹江市城区",
+  "longitude": 129.633,
+  "latitude": 44.551,
   "requested_at": "2026-11-05T19:16:00+08:00"
 }
