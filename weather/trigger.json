@@ -1,8 +1,8 @@
 {
-  "request_id": "app-trigger-check-2026-11-05-01",
-  "query": "验证 GitHub App 文件更新是否触发工作流",
+  "request_id": "app-trigger-check-node24-2026-11-05-01",
+  "query": "验证当前工作流版本",
   "location": "北京朝阳区",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-05T18:05:00+08:00"
+  "requested_at": "2026-11-05T18:10:00+08:00"
 }
