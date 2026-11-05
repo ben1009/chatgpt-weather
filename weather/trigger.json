@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-20261105-weekend-rain-1901",
-  "query": "北京朝阳区 2026-11-07 至 2026-11-08 周末降雨与棒球场地情况",
-  "location": "北京朝阳区",
-  "longitude": 116.4436,
-  "latitude": 39.9219,
+  "request_id": "chatgpt-dongcheng-20261105-01",
+  "query": "查询北京市东城区天气，重点查看2026年11月7日至8日周末降雨",
+  "location": "北京市东城区",
+  "longitude": 116.422,
+  "latitude": 39.928,
   "requested_at": "2026-11-05T19:16:00+08:00"
 }
