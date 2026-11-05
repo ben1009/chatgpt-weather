@@ -1,13 +1,13 @@
 {
-  "request_id": "review-fix-verify-2026-11-05-05",
-  "query": "Verify compact weather result and atomic publishing",
+  "request_id": "chatgpt-20261105-weekend-rain-1901",
+  "query": "北京朝阳区 2026-11-07 至 2026-11-08 周末降雨与棒球场地情况",
   "location": "北京朝阳区",
   "coordinates": {
     "longitude": 116.4436,
     "latitude": 39.9219
   },
-  "requested_at": "2026-11-05T19:30:00+08:00",
-  "fetched_at": "2026-11-05T11:13:49Z",
+  "requested_at": "2026-11-05T19:16:00+08:00",
+  "fetched_at": "2026-11-05T11:17:59Z",
   "source": "Caiyun Weather API",
   "api_version": "v2.6",
   "timezone": "Asia/Shanghai",
@@ -67,14 +67,14 @@
         "probability": 0
       },
       "temperature": {
-        "max": 16.72,
+        "max": 16.06,
         "min": 4.75,
         "avg": 9.74
       },
       "temperature_08h_20h": {
-        "max": 16.72,
+        "max": 16.06,
         "min": 5.6,
-        "avg": 13.95
+        "avg": 13.76
       },
       "temperature_20h_32h": {
         "max": 12.26,
@@ -127,15 +127,15 @@
     {
       "date": "2026-11-07T00:00+08:00",
       "precipitation": {
-        "max": 2.2795,
+        "max": 2.2045,
         "min": 0.0,
-        "avg": 0.4674,
+        "avg": 0.4495,
         "probability": 70
       },
       "precipitation_08h_20h": {
-        "max": 2.2795,
+        "max": 2.2045,
         "min": 0.0,
-        "avg": 0.4986,
+        "avg": 0.4627,
         "probability": 70
       },
       "precipitation_20h_32h": {
@@ -578,17 +578,17 @@
     {
       "datetime": "2026-11-07T12:00+08:00",
       "precipitation": {
-        "value": 0.0675,
-        "probability": 60
+        "value": 0.0576,
+        "probability": 0
       },
       "temperature": 7.71,
       "apparent_temperature": 4.7,
-      "skycon": "LIGHT_RAIN"
+      "skycon": "CLOUDY"
     },
     {
       "datetime": "2026-11-07T13:00+08:00",
       "precipitation": {
-        "value": 0.1039,
+        "value": 0.0973,
         "probability": 60
       },
       "temperature": 8.01,
@@ -598,7 +598,7 @@
     {
       "datetime": "2026-11-07T14:00+08:00",
       "precipitation": {
-        "value": 0.2863,
+        "value": 0.2289,
         "probability": 60
       },
       "temperature": 7.89,
@@ -608,7 +608,7 @@
     {
       "datetime": "2026-11-07T15:00+08:00",
       "precipitation": {
-        "value": 0.5252,
+        "value": 0.4145,
         "probability": 60
       },
       "temperature": 7.88,
@@ -618,17 +618,17 @@
     {
       "datetime": "2026-11-07T16:00+08:00",
       "precipitation": {
-        "value": 0.9635,
-        "probability": 70
+        "value": 0.8491,
+        "probability": 60
       },
       "temperature": 8.28,
       "apparent_temperature": 5.9,
-      "skycon": "MODERATE_RAIN"
+      "skycon": "LIGHT_RAIN"
     },
     {
       "datetime": "2026-11-07T17:00+08:00",
       "precipitation": {
-        "value": 1.7568,
+        "value": 1.7008,
         "probability": 70
       },
       "temperature": 7.25,
@@ -638,7 +638,7 @@
     {
       "datetime": "2026-11-07T18:00+08:00",
       "precipitation": {
-        "value": 2.2795,
+        "value": 2.2045,
         "probability": 70
       },
       "temperature": 6.84,
