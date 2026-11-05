@@ -1,8 +1,8 @@
 {
-  "request_id": "app-trigger-check-node24-2026-11-05-01",
-  "query": "验证当前工作流版本",
+  "request_id": "review-fix-verify-2026-11-05-01",
+  "query": "Verify the reviewed weather workflow fixes",
   "location": "北京朝阳区",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-05T18:10:00+08:00"
+  "requested_at": "2026-11-05T18:30:00+08:00"
 }
