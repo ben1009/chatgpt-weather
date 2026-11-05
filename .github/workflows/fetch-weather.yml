@@ -41,13 +41,13 @@ jobs:
           content="$(base64 -w0 "$result_file")"
 
           for attempt in 1 2 3; do
-            latest_request_id="$(gh api "repos/$GITHUB_REPOSITORY/contents/weather/trigger.json" -f "ref=$GITHUB_REF_NAME" --jq '.content | gsub("\\n"; "") | @base64d | fromjson | .request_id')"
+            latest_request_id="$(gh api --method GET "repos/$GITHUB_REPOSITORY/contents/weather/trigger.json" -f "ref=$GITHUB_REF_NAME" --jq '.content | gsub("\\n"; "") | @base64d | fromjson | .request_id')"
             if [ "$latest_request_id" != "$request_id" ]; then
               echo "A newer request replaced this one; its run will publish the result."
               exit 0
             fi
 
-            current_sha="$(gh api "repos/$GITHUB_REPOSITORY/contents/weather/weather.json" -f "ref=$GITHUB_REF_NAME" --jq .sha)"
+            current_sha="$(gh api --method GET "repos/$GITHUB_REPOSITORY/contents/weather/weather.json" -f "ref=$GITHUB_REF_NAME" --jq .sha)"
             if gh api --method PUT "repos/$GITHUB_REPOSITORY/contents/weather/weather.json" \
               -f message="chore: update weather forecast" \
               -f content="$content" \
