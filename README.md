@@ -37,3 +37,5 @@ The API request asks for up to 15 daily forecast entries and 72 hourly entries; 
 An unavailable alert feed is reported as `sections.alert.status = "unavailable"` with `alerts = null`; it does not establish that no warnings are active. In particular, Caiyun documents an upstream failure as empty alert content with `adcodes = null`. Existing warning content is retained if only its coverage metadata is unavailable. See the [Caiyun alert response documentation](https://docs.caiyunapp.com/weather-api/v2/v2.6/5-alert.html).
 
 If a commit response is lost or interrupted while being read, publishing re-reads the branch before declaring failure, including after the final attempt. An already committed matching result succeeds without creating a duplicate commit.
+
+Publishing requires a returned commit OID as acknowledgement. If that acknowledgement is missing, the publisher reconciles the branch state before reporting success or failure.

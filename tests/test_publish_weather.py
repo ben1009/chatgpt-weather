@@ -158,13 +158,55 @@ class PublishingTests(unittest.TestCase):
 
     def test_real_client_sends_expected_head_in_atomic_mutation(self):
         client = GitHubClient("owner/repo", "main", "test-token")
-        with mock.patch.object(client, "request", return_value={}) as request:
+        acknowledgement = {"data": {"createCommitOnBranch": {"commit": {"oid": "a" * 40}}}}
+        with mock.patch.object(client, "request", return_value=acknowledgement) as request:
             client.create_commit("immutable-head", self.result)
         body = request.call_args.args[1]
         commit = body["variables"]["input"]
         self.assertEqual(commit["expectedHeadOid"], "immutable-head")
         self.assertEqual(commit["branch"]["branchName"], "main")
         self.assertEqual(base64.b64decode(commit["fileChanges"]["additions"][0]["contents"]).decode(), self.result)
+
+    def test_real_client_rejects_missing_commit_acknowledgement(self):
+        client = GitHubClient("owner/repo", "main", "test-token")
+        responses = [
+            {}, {"data": None}, {"data": {}},
+            {"data": {"createCommitOnBranch": None}},
+            {"data": {"createCommitOnBranch": {"commit": None}}},
+            {"data": {"createCommitOnBranch": {"commit": {"oid": ""}}}},
+            {"data": {"createCommitOnBranch": {"commit": {"oid": " "}}}},
+            {"data": {"createCommitOnBranch": {"commit": {"oid": "not-a-commit"}}}},
+            {"data": {"createCommitOnBranch": {"commit": {"oid": 123}}}},
+        ]
+        for response in responses:
+            with self.subTest(response=response):
+                with mock.patch.object(client, "request", return_value=response), self.assertRaises(GitHubError):
+                    client.create_commit("expected-head", self.result)
+
+    def test_missing_acknowledgement_cannot_report_an_unpublished_result_as_success(self):
+        branch = Branch(self.trigger)
+        client = GitHubClient("owner/repo", "main", "test-token")
+        client.branch_head = branch.branch_head
+        client.read_file = branch.read_file
+        response = {"data": {"createCommitOnBranch": None}}
+        with mock.patch.object(client, "request", return_value=response), self.assertRaises(GitHubError):
+            publish_weather(client, self.trigger, self.result, attempts=1)
+        self.assertEqual(branch.read_file("weather/weather.json", branch.head), "old result")
+
+    def test_missing_acknowledgement_after_commit_is_reconciled_without_duplicate(self):
+        branch = Branch(self.trigger)
+        client = GitHubClient("owner/repo", "main", "test-token")
+        client.branch_head = branch.branch_head
+        client.read_file = branch.read_file
+
+        def apply_commit_without_acknowledgement(*args, **kwargs):
+            branch.advance({"weather/weather.json": self.result})
+            return {"data": {"createCommitOnBranch": None}}
+
+        with mock.patch.object(client, "request", side_effect=apply_commit_without_acknowledgement) as request:
+            self.assertTrue(publish_weather(client, self.trigger, self.result, attempts=1))
+        request.assert_called_once()
+        self.assertEqual(branch.read_file("weather/weather.json", branch.head), self.result)
 
     def test_trigger_read_uses_the_captured_commit(self):
         client = GitHubClient("owner/repo", "main", "test-token")

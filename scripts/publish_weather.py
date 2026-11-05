@@ -5,6 +5,7 @@ import base64
 import http.client
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -68,7 +69,7 @@ class GitHubClient:
         return base64.b64decode(payload["content"]).decode("utf-8")
 
     def create_commit(self, expected_head: str, result_text: str) -> None:
-        self.request(
+        payload = self.request(
             "",
             {
                 "query": "mutation($input: CreateCommitOnBranchInput!) { createCommitOnBranch(input: $input) { commit { oid } } }",
@@ -91,6 +92,12 @@ class GitHubClient:
             },
             graphql=True,
         )
+        data = payload.get("data")
+        mutation = data.get("createCommitOnBranch") if isinstance(data, dict) else None
+        commit = mutation.get("commit") if isinstance(mutation, dict) else None
+        oid = commit.get("oid") if isinstance(commit, dict) else None
+        if not isinstance(oid, str) or not re.fullmatch(r"(?:[0-9a-fA-F]{40}|[0-9a-fA-F]{64})", oid):
+            raise GitHubError("GitHub did not acknowledge the result commit.")
 
 
 def publish_weather(client, captured_trigger: dict, result_text: str, attempts: int = 3) -> bool:
