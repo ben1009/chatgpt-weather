@@ -1,0 +1,8 @@
+{
+  "request_id": "bootstrap-2026-11-05-01",
+  "query": "验证天气工作流和 API 连通性",
+  "location": "北京朝阳区",
+  "longitude": 116.4436,
+  "latitude": 39.9219,
+  "requested_at": "2026-11-05T18:00:00+08:00"
+}
