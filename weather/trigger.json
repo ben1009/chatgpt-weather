@@ -1,8 +1,7 @@
 {
-  "request_id": "chatgpt-chaoyang-20261106-0740-01",
-  "query": "查询北京朝阳区现在天气、今天逐小时气温和降水，以及周六周日雨雪预报",
-  "location": "北京市朝阳区",
-  "longitude": 116.4436,
-  "latitude": 39.9219,
-  "requested_at": "2026-11-06T07:40:00+08:00"
+  "request_id": "chatgpt-jiusuo-20261106-01",
+  "query": "查询海南省乐东黎族自治县九所镇当前天气及未来48小时逐小时气温和降雨，特别关注本周末",
+  "location": "海南省乐东黎族自治县九所镇",
+  "longitude": 108.953942,
+  "latitude": 18.453636
 }
