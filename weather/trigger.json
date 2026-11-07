@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-bj-chaoyang-20261107-1913-b",
-  "query": "北京朝阳区今夜11月7日到明天11月8日天气、逐小时降水与雨雪变化",
+  "request_id": "chatgpt-bj-chaoyang-20261107-2040-c",
+  "query": "北京朝阳区 11月7日20:40以后到11月8日 逐小时降雪、雨雪强度、气温",
   "location": "北京朝阳区",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-07T19:13:00+08:00"
+  "requested_at": "2026-11-07T20:40:00+08:00"
 }
