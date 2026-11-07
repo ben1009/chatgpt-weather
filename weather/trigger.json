@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-chaoyang-20261107-0813",
-  "query": "北京市朝阳区 2026-11-07 今日及11-08天气，逐小时温度、降水概率、降水强度、雨雪转换",
-  "location": "北京市朝阳区",
-  "longitude": 116.4436,
-  "latitude": 39.9219,
-  "requested_at": "2026-11-07T08:13:00+08:00"
+  "request_id": "chatgpt-wangjing-20261107-0930",
+  "query": "北京市朝阳区望京 今日周六 11月7日及周日11月8日逐小时天气、降水概率、雨转雪时段",
+  "location": "北京市朝阳区望京（望京SOHO附近）",
+  "longitude": 116.481075,
+  "latitude": 39.996743,
+  "requested_at": "2026-11-07T09:30:00+08:00"
 }
