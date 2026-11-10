@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-bj-chaoyang-20261107-2040-c",
-  "query": "北京朝阳区 11月7日20:40以后到11月8日 逐小时降雪、雨雪强度、气温",
+  "request_id": "chatgpt-bj-chaoyang-20261110-2030-night",
+  "query": "本周2026年11月10日至15日 北京朝阳区夜间20:00至次日08:00气温和每日夜间最低温度",
   "location": "北京朝阳区",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-07T20:40:00+08:00"
+  "requested_at": "2026-11-10T20:30:00+08:00"
 }
