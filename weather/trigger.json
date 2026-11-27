@@ -1,8 +1,8 @@
 {
-  "request_id": "chatgpt-bj-chaoyang-20261119-1150-weekend",
-  "query": "北京朝阳区呼家楼周末2026年11月21日和22日逐小时天气，重点降雨概率降水量、温度、体感和风",
+  "request_id": "chatgpt-bj-chaoyang-20261127-weekend",
+  "query": "北京朝阳区呼家楼2026年11月28日、29日逐小时周末天气、温度、体感、风和降水",
   "location": "北京朝阳区呼家楼",
   "longitude": 116.4436,
   "latitude": 39.9219,
-  "requested_at": "2026-11-19T11:50:00+08:00"
+  "requested_at": "2026-11-27T21:00:00+08:00"
 }
